@@ -1,18 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    {{employees}}
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios'
 
 export default {
   name: 'app',
+  data() {
+    return {
+      employees: false
+    }
+  },
   components: {
     HelloWorld
-  }
+  },
+  created() {
+    axios.get('/api/employees.json')
+      .then(res => this.employees = res.data);
+  },
+
 }
 </script>
 
