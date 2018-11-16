@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <div class="content-container">
-      <user-card v-for="(employee, index) in employees" :key="index" :user="employee"></user-card>
+      <employee-card v-for="(employee, index) in employees" :key="index" :employee="employee"></employee-card>
     </div>
   </div>
 </template>
 
 <script>
-import userCard from './components/UserCard.vue'
+import employeeCard from './components/employeeCard.vue'
 import axios from 'axios'
 
 export default {
@@ -18,7 +18,7 @@ export default {
     }
   },
   components: {
-    userCard
+    employeeCard
   },
   created() {
     axios.get('/api/employees.json')
@@ -44,7 +44,12 @@ body {
 
 .content-container {
   max-width: 800px;
-  background-color: white;
+  height: 100vh;
+  background-color: #fafafa;
   margin: auto;
+}
+
+a {
+  color: black;
 }
 </style>
