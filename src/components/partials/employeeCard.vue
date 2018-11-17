@@ -133,6 +133,10 @@ export default {
   padding: 0 16px !important;
 }
 
+.md-app-content .md-card {
+  margin: auto;
+}
+
 .employee-card-content {
   border-top: 1px solid lightgrey;
   text-align: left;

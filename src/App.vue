@@ -36,7 +36,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "~vue-material/dist/theme/engine";
+@import "~vue-material/dist/theme/all";
+
+.md-toolbar.md-theme-default.md-primary,
+.md-field.md-theme-default:before {
+  background-color: #244C5A !important;
+}
+
+.md-field.md-theme-default.md-focused label, {
+  color: #244C5A;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -51,7 +63,6 @@ body {
 
 .content-container {
   max-width: 1500px;
-  background-color: white;
   margin: auto;
 }
 
@@ -62,5 +73,8 @@ a {
 .md-app:not(.md-overlap).md-theme-default {
     height: 100vh;
     overflow-x: hidden;
+    margin-top: -1px;
+    margin-left: -1px;
+    margin-right: -1px;
 }
 </style>

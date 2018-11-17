@@ -1,10 +1,15 @@
 <!-- Renders one employees details -->
 
 <template>
-<div class="md-layout-item md-medium-size-33 md-small-size-50 md-xsmall-size-100">
+<div class="content-container">
   <employee-card :employee="employee"></employee-card>
-  <br><br>
+  <br>
   <address-card :employee="employee"></address-card>
+  <br><br>
+  <md-button href="mailto:complaints@gov.ca">
+    <!-- <md-icon>phone</md-icon> -->
+    Report an Issue
+  </md-button>
 </div>
 </template>
 
@@ -33,3 +38,8 @@ export default {
 
 </script>
 
+<style scoped>
+.content-container {
+  margin: 10px 20px;
+}
+</style>

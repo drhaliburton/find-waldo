@@ -3,10 +3,12 @@
     <md-app>
       <md-app-toolbar class="md-primary">
         <span class="md-title">Find a Government Employee</span>
+        <img class="yukon-logo" src="https://yukon.ca/sites/yukon.ca/themes/yukon_wxt/logo-white.svg">
       </md-app-toolbar>
 
       <md-app-drawer md-permanent="full">
         <md-toolbar class="md-transparent" md-elevation="0">
+          <br><br>
           <md-field>
             <label>Search</label>
             <md-input v-model="initial"></md-input>
@@ -49,12 +51,24 @@ export default {
       initial: '',
     }
   }
-
 }
-
 </script>
 
 <style lang="scss" scoped>
+  .yukon-logo {
+    margin-left: auto;
+    margin-right: 5px;
+    width: 10%;
+    max-width: 90px;
+  }
+
+  .md-toolbar.md-theme-default.md-transparent {
+    padding-top: 13px;
+  }
+
+  input {
+    caret-color: black !important;
+  }
 
   .md-app {
     border: 1px solid rgba(#000, .12);
