@@ -2,6 +2,7 @@
 
 <template>
 <div class="content-container">
+  {{divisions}}
   <router-link v-if="divisions" v-for="(division, index) in divisions" :key="index" tag="div" :to="divisionRoute(division)">
     <a>{{division.name}}</a>
   </router-link>
@@ -13,10 +14,13 @@ export default {
   name: 'divisionsView',
   props: {
   },
-  components: {
+  data() {
+    return {
+      divisions: false
+    }
   },
   computed: {
-    divisions() {
+    stateDivisions() {
       return this.$store.state.division;
     }
   },
@@ -24,11 +28,15 @@ export default {
     '$route.params.departmentName' (name) {
       this.$store.dispatch('getDivisions', this.$route.params.departmentName)
     },
-    'divisions' (divisions) {
-
+    'stateDivisions' (divisions) {
+      console.log(divisions)
+      this.divisions = divisions;
     },
   },
   mounted() {
+    if (this.stateDivisions) {
+      this.divisions = this.stateDivisions;
+    }
     this.$store.dispatch('getDivisions', this.$route.params.departmentName)
   },
   methods: {

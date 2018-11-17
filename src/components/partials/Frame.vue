@@ -22,10 +22,12 @@
         </md-toolbar>
 
         <md-list>
-          <md-list-item v-for="(departments, index) in departments" :key="index" :departments="departments">
             <md-icon>whatshot</md-icon>
-            <span class="md-list-item-text">{{departments.name}}</span>
-          </md-list-item>
+              <router-link v-for="(department, index) in departments" :key="index" tag="div" :to="'/departments/' + department.name">
+                <md-list-item class='foo-block'>
+                  {{department.name}}
+                </md-list-item>
+              </router-link>
         </md-list>
       </md-app-drawer>
 
