@@ -28,6 +28,10 @@ export default {
 @import "~vue-material/dist/theme/engine";
 @import "~vue-material/dist/theme/all";
 
+.md-app-container {
+  overflow-x: hidden !important;
+}
+
 .md-toolbar.md-theme-default.md-primary,
 .md-field.md-theme-default:before {
   background-color: #244C5A !important;

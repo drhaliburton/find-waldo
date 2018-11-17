@@ -1,48 +1,53 @@
 <template>
   <div class="page-container">
     <md-app>
-      <md-app-toolbar class="md-primary">
+      <md-app-toolbar class="md-primary" md-elevation="0">
+        <md-button class="md-icon-button" @click="toggleMenu" v-if="!menuVisible">
+          <md-icon>menu</md-icon>
+        </md-button>
         <span class="md-title">Find a Government Employee</span>
-        <img class="yukon-logo" src="https://yukon.ca/sites/yukon.ca/themes/yukon_wxt/logo-white.svg">
       </md-app-toolbar>
 
-      <md-app-drawer md-permanent="full">
+      <md-app-drawer :md-active.sync="menuVisible" md-persistent="mini">
         <md-toolbar class="md-transparent" md-elevation="0">
-          <br><br>
+          <md-button class="md-icon-button md-dense" @click="toggleMenu">
+            <md-icon>chevron_left</md-icon>
+          </md-button>
           <md-field>
             <label>Search</label>
             <md-input v-model="initial"></md-input>
+            <div class="md-toolbar-section-end">
+            </div>
           </md-field>
         </md-toolbar>
 
-        <div class="full-control">
-          <div class="list">
-            <md-list :md-expand-single="true">
-              <md-list-item v-for="(departments, index) in departments" :key="index" :departments="departments">
-                <md-icon>whatshot</md-icon>
-                <span class="md-list-item-text">{{departments.name}}</span>
-              </md-list-item>
-            </md-list>
-          </div>
-        </div>
+        <md-list>
+          <md-list-item v-for="(departments, index) in departments" :key="index" :departments="departments">
+            <md-icon>whatshot</md-icon>
+            <span class="md-list-item-text">{{departments.name}}</span>
+          </md-list-item>
+        </md-list>
       </md-app-drawer>
 
       <md-app-content>
-        <div class="md-layout md-gutter md-alignment-center">
-          <slot></slot>
-        </div>
+        <slot></slot>
       </md-app-content>
     </md-app>
   </div>
 </template>
 
 <script>
-
-export default {
+  export default {
   name: 'frame',
   data() {
     return {
       initial: '',
+      menuVisible: false
+    }
+  },
+  methods: {
+    toggleMenu () {
+      this.menuVisible = !this.menuVisible
     }
   },
   computed: {
@@ -59,7 +64,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .yukon-logo {
+  .md-app {
+    min-height: 350px;
+    border: 1px solid rgba(#000, .12);
+  }
+
+   // Demo purposes only
+  .md-drawer {
+    max-width: 300px;
+  }
+
+    .yukon-logo {
     margin-left: auto;
     margin-right: 5px;
     width: 10%;
@@ -78,14 +93,7 @@ export default {
     border: 1px solid rgba(#000, .12);
   }
 
-   // Demo purposes only
-  .md-drawer {
-    width: 100%;
-    max-width: 300px;
-  }
-
   .md-content {
    background-color: #fafafa;
   }
 </style>
-
