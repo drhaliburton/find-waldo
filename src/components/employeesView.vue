@@ -2,7 +2,7 @@
 
 <template>
 <div class="content-container">
-  <user-card v-for="(employee, index) in employees" :key="index" :user="employee" @click="goToRoute"></user-card>
+  <user-card v-for="(employee, index) in employees" :key="index" :user="employee" :click="goToRoute"></user-card>
   <!-- <router-link v-for="(employee, index) in filteredEmployees" :key="index" tag="div" >
     {{employee}}
   </router-link> -->
@@ -47,7 +47,6 @@ export default {
   mounted() {
       axios.get('/api/employees.json')
       .then(res => {
-        console.log(res)
         let employeesWithData = res.data.employees.map((employee, index) => {
           employee.languages = employeeConfig[0].languages;
           employee.skills = employeeConfig[0].skills;

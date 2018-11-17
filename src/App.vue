@@ -75,5 +75,6 @@ a {
 
 .md-card {
   margin: 10px auto !important;
+  height: auto !important;
 }
 </style>

@@ -5,12 +5,20 @@
   <ul>
     <li v-for="(skill, index) in employee.skills" :key="index">{{skill}}</li>
   </ul>
-  <b><md-icon>{{roleInfo.department.icon}}</md-icon>{{roleInfo.department.label}}</b>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin tempor eros, sed semper nunc aliquet at. Duis pulvinar risus quis libero ultricies fermentum. Etiam ullamcorper at est ornare consequat.  <br><br>
-  <b><md-icon>group</md-icon>{{roleInfo.division.label}}</b>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin tempor eros, sed semper nunc aliquet at. Duis pulvinar risus quis libero ultricies fermentum. Etiam ullamcorper at est ornare consequat.  <br><br>
+  <span v-if="roleInfo.department.label">
+    <b><md-icon>favorite</md-icon>{{roleInfo.department.label}}</b>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin tempor eros, sed semper nunc aliquet at. Duis pulvinar risus quis libero ultricies fermentum. Etiam ullamcorper at est ornare consequat.  <br><br>
+  </span>
+  <span v-if="roleInfo.division.label">
+    <b><md-icon>group</md-icon>{{roleInfo.division.label}}</b>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin tempor eros, sed semper nunc aliquet at. Duis pulvinar risus quis libero ultricies fermentum. Etiam ullamcorper at est ornare consequat.  <br><br>
+  </span>
+  <span v-if="roleInfo.title.label">
+
   <b><md-icon>home</md-icon>{{roleInfo.title.label}}</b>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin tempor eros, sed semper nunc aliquet at. Duis pulvinar risus quis libero ultricies fermentum. Etiam ullamcorper at est ornare consequat.<br><br>
+  </span>
+
 </div>
 </template>
 

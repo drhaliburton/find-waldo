@@ -24,9 +24,8 @@
       let path = this.$route.path;
       if (department.children) {
         path = path + '/' + department.name;
-        console.log(path);
       } else {
-        path = path + department.name + '/employees';
+        path = path + '/' + department.name + '/employees';
       }
       this.$router.push(path);
     }

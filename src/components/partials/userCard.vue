@@ -8,7 +8,7 @@
                   </div>
       </md-card-header>
 
-          <md-button @click="click(department)">
+          <md-button @click="click(user)">
           View More
         </md-button>
     </md-ripple>

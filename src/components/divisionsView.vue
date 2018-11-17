@@ -8,8 +8,14 @@
 
 <script>
 import genericCard from '@/components/partials/genericCard.vue'
+
 export default {
   name: 'divisionsView',
+  components: {
+    genericCard
+  },
+  props: {
+  },
   computed: {
     divisions() {
       return this.$store.state.division;
@@ -24,14 +30,10 @@ export default {
     },
   },
   mounted() {
-    if (this.stateDivisions) {
-      this.divisions = this.stateDivisions;
-    }
     this.$store.dispatch('getDivisions', this.$route.params.departmentName)
   },
   methods: {
     goToRoute(division) {
-      console.log(division)
       let path = this.$route.path;
       if (division.children) {
         path = path + '/divisions/' + division.name;

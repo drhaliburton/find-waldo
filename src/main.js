@@ -90,7 +90,7 @@ const store = new Vuex.Store({
       axios.get('/api/employees.json')
         .then(res => {
           let employeesWithData = res.data.employees.map((employee, index) => {
-            employee.languages = employeeConfig[0].languages;
+            employee.languages = employeeConfig[0].language;
             employee.skills = employeeConfig[0].skills;
             employee.id = index;
             indexCounter > employeeConfig.length - 1 ? indexCounter = 0 : indexCounter++;
