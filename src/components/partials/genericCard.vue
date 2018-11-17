@@ -1,8 +1,11 @@
 <template>
   <md-card md-with-hover>
     <md-ripple>
+
       <md-card-header>
-        <div class="md-title">{{department.name}}</div>
+        <div class="md-title">
+        <md-icon v-if="department.type == 'department'">{{departmentLookup[department.name].icon}}</md-icon>
+        {{department.name}}</div>
       </md-card-header>
 
       <md-card-content>
@@ -11,7 +14,6 @@
 
           <md-button @click="click(department)">
           View {{department.name}}
-          <md-icon>caret_left</md-icon>
         </md-button>
     </md-ripple>
   </md-card>
@@ -176,6 +178,11 @@ export default {
 
 .md-card-content {
   text-align: center !important;
+}
+
+.department-icon{
+  font-size: 40px !important;
+  padding: 20px auto;
 }
 
 </style>
