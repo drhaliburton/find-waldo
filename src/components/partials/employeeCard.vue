@@ -2,7 +2,7 @@
   <md-card>
     <md-card-header>
       <md-card-media md-medium>
-        <img src="https://vuematerial.io/assets/examples/card-weather.png" alt="People">
+        <img src="../../../public/waldo.png" alt="People">
       </md-card-media>
       <md-card-header-text>
         <div class="md-title">{{employee.first_name}} {{employee.last_name}}</div>
@@ -59,7 +59,7 @@ export default {
       },
       divisionLookup: {
         "Information and Communications Technology": 'phone',
-      }
+      },
     }
   },
   computed: {
