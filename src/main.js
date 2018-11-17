@@ -12,7 +12,7 @@ import branchView from './components/branchView.vue'
 import employeesView from './components/employeesView.vue'
 import employeeView from './components/employeeView.vue'
 
-import employeeConfig from './employeeConfig.js'
+import employeeConfig from './components/employeeConfig.js'
 
 Vue.config.productionTip = false
 
@@ -28,7 +28,7 @@ const routes = [
   { path: '/departments/:departmentName/employees', component: employeesView },
   { path: '/departments/:departmentName/divisions/:divisionName', component: branchView },
   { path: '/departments/:departmentName/divisions/:divisionName/employees', component: employeesView },
-  { path: '/departments/:departmentName/divisions/:divisionName/branch/:branchName/employees', component: employeesView },
+  { path: '/departments/:departmentName/divisions/:divisionName/branches/:branchName/employees', component: employeesView },
 ]
 
 const router = new VueRouter({
@@ -39,6 +39,7 @@ const store = new Vuex.Store({
   state: {
     employees: false,
     employee: false,
+    filteredEmployess: false,
     divisions: false,
     division: false,
     branches: false,
@@ -79,6 +80,9 @@ const store = new Vuex.Store({
     employee(state, data) {
       state.employee = data;
     },
+    filteredEmployees(state, data) {
+      state.filteredEmployees = data;
+    }
   },
   actions: {
     getContent({commit}) {
@@ -89,7 +93,7 @@ const store = new Vuex.Store({
             employee.languages = employeeConfig[0].languages;
             employee.skills = employeeConfig[0].skills;
             employee.id = index;
-            // indexCounter = employeeConfig.length ? indexCounter = 0 : indexCounter++;
+            indexCounter > employeeConfig.length - 1 ? indexCounter = 0 : indexCounter++;
             return employee;
           });
           commit('employees', employeesWithData)
@@ -100,19 +104,15 @@ const store = new Vuex.Store({
           let divisionsArray = [];
           let branchesArray = [];
           let unitsArray = [];
-          let departments = res.data.children.map((dep, depIndex) => {
-            dep.id = depIndex;
+          let departments = res.data.children.map((dep) => {
             if (dep.children) {
-              let divisions = dep.children.map((division, divisionIndex) => {
-                division.id = divisionIndex;
+              let divisions = dep.children.map((division) => {
                 division.department = dep.name;
                 if (division.children) {
-                  let branches = division.children.map((branch, branchIndex) => {
-                    branch.id = branchIndex;
+                  let branches = division.children.map((branch) => {
                     branch.division = division.name;
                     if (branch.children) {
-                      let units = branch.children.map((unit, unitIndex) => {
-                        unit.id = unitIndex;
+                      let units = branch.children.map((unit) => {
                         unit.branch = branch.name;
                         return unit;
                       })
@@ -144,6 +144,20 @@ const store = new Vuex.Store({
     getEmployee({commit, state}, id) {
       const employee = state.employees.filter(employee => employee.id == id);
       commit('employee', employee);
+    },
+    getFilteredEmployees({commit, state}, routes) {
+      let filteredEmployees = state.employees.filter(employee => {
+        if (routes.branchName) {
+          return (employee.branch == routes.branchName) && (employee.division == routes.divisionName) && (employee.department == routes.departmentName);
+        }
+        if (routes.divisionName) {
+          return (employee.division == routes.divisionName) && (employee.department == routes.departmentName);
+        }
+        if (routes.departmentName) {
+          return employee.department == routes.departmentName
+        }
+      })
+      commit('filteredEmployees', filteredEmployees);
     },
     getDivisions({ commit, state }, departmentName) {
       const division = state.divisions.filter(division => {

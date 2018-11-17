@@ -2,16 +2,26 @@
 
 <template>
 <div class="content-container">
-  <router-link v-if="employees" v-for="(empoyee, index) in employees" :key="index" tag="div" :to="'/employee/' + employee.id">
-    <a>{{empoyee.name}}</a>
-  </router-link>
+  <user-card v-for="(employee, index) in employees" :key="index" :user="employee" @click="goToRoute"></user-card>
+  <!-- <router-link v-for="(employee, index) in filteredEmployees" :key="index" tag="div" >
+    {{employee}}
+  </router-link> -->
 </div>
 </template>
 
 <script>
+import userCard from '@/components/partials/userCard.vue';
+import axios from 'axios';
+import employeeConfig from './employeeConfig.js'
+
+let indexCounter = 0;
+
 export default {
   name: 'employeesView',
   props: {
+  },
+  components: {
+    userCard,
   },
   data() {
     return {
@@ -20,7 +30,7 @@ export default {
   },
   computed: {
     filteredEmployees () {
-      return this.$store.state.filteredEmployees;
+      return this.$store.state.employees;
     }
   },
   watch: {
@@ -30,10 +40,30 @@ export default {
     'filteredEmployees' (employees) {
       this.employees = employees;
     },
+    'employees' (employees) {
+
+    }
   },
   mounted() {
-    this.$store.dispatch('getFilteredEmployees', this.$route.params)
+      axios.get('/api/employees.json')
+      .then(res => {
+        console.log(res)
+        let employeesWithData = res.data.employees.map((employee, index) => {
+          employee.languages = employeeConfig[0].languages;
+          employee.skills = employeeConfig[0].skills;
+          employee.id = index;
+          indexCounter > employeeConfig.length - 1 ? indexCounter = 0 : indexCounter++;
+          return employee;
+        });
+        this.employees = employeesWithData;
+        });
+
   },
+  methods: {
+    goToRoute(employee) {
+      this.$router.push('/employee/' + employee.id);
+    }
+  }
 }
 </script>
 

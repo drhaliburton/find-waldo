@@ -2,16 +2,14 @@
   <md-card md-with-hover>
     <md-ripple>
       <md-card-header>
-        <div class="md-title">{{department.name}}</div>
+        <div class="md-title">{{user.first_name}} {{user.last_name}}</div>
+                <div class="md-subhead">        {{user.title}}
+
+                  </div>
       </md-card-header>
 
-      <md-card-content>
-        This is a description about the department.
-      </md-card-content>
-
           <md-button @click="click(department)">
-          View {{department.name}}
-          <md-icon>caret_left</md-icon>
+          View More
         </md-button>
     </md-ripple>
   </md-card>
@@ -21,7 +19,7 @@
 export default {
   name: 'RegularCards',
   props: {
-    department: Object,
+    user: Object,
     click: Function,
   },
 }
@@ -36,5 +34,6 @@ export default {
 .md-card-content {
   text-align: center !important;
 }
+
 
 </style>

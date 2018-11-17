@@ -2,9 +2,7 @@
 
 <template>
 <div class="content-container">
-  <router-link v-if="divisions" v-for="(division, index) in divisions" :key="index" tag="div" :to="divisionRoute(division)">
-    <generic-card :department="division"></generic-card>
-  </router-link>
+  <generic-card v-if="divisions" v-for="(division, index) in divisions" :key="index" :department="division" :click="goToRoute"></generic-card>
 </div>
 </template>
 
@@ -26,17 +24,21 @@ export default {
     },
   },
   mounted() {
+    if (this.stateDivisions) {
+      this.divisions = this.stateDivisions;
+    }
     this.$store.dispatch('getDivisions', this.$route.params.departmentName)
   },
   methods: {
-    divisionRoute(division) {
+    goToRoute(division) {
+      console.log(division)
       let path = this.$route.path;
       if (division.children) {
         path = path + '/divisions/' + division.name;
       } else {
         path = path + '/divisions/' + division.name + '/employees';
       }
-      return path;
+      this.$router.push(path);
     }
   }
 }

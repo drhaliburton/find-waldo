@@ -2,9 +2,7 @@
 
 <template>
 <div class="content-container">
-  <router-link v-for="(department, index) in departments" :key="index" tag="div" class='flex-cards' :to="'/departments/' + department.name">
-    <generic-card :department="department"></generic-card>
-  </router-link>
+  <generic-card v-for="(department, index) in departments" :key="index" :department="department" :click="goToRoute"></generic-card>
 </div>
 </template>
 
@@ -21,6 +19,18 @@
       return this.$store.state.departments;
     }
   },
+  methods: {
+    goToRoute(department) {
+      let path = this.$route.path;
+      if (department.children) {
+        path = path + '/' + department.name;
+        console.log(path);
+      } else {
+        path = path + department.name + '/employees';
+      }
+      this.$router.push(path);
+    }
+  }
 }
 
 </script>

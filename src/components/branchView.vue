@@ -2,17 +2,17 @@
 
 <template>
 <div class="content-container">
-  <router-link v-if="branches" v-for="(branch, index) in branches" :key="index" tag="div" :to="branchRoute(branch)">
-    <a>{{branch.name}}</a>
-  </router-link>
+  <generic-card v-if="branches" v-for="(branch, index) in branches" :key="index" :department="branch" :click="goToRoute"></generic-card>
 </div>
 </template>
-<script>
 
+<script>
+import genericCard from '@/components/partials/genericCard.vue'
 
 export default {
   name: 'branchView',
-  props: {
+  components: {
+    genericCard
   },
   data() {
     return {
@@ -35,14 +35,14 @@ export default {
     },
   },
   methods: {
-    branchRoute(branch) {
+    goToRoute(branch) {
       let path = this.$route.path;
       if (branch.children) {
         path = path + '/branches/' + branch.name;
       } else {
         path = path + '/branches/' + branch.name + '/employees';
       }
-      return path;
+      this.$router.push(path)
     }
   }
 }

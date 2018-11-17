@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="content-container">
+    <div class="content-container" v-if="loaded">
       <app-frame>
         <router-view></router-view>
       </app-frame>
@@ -19,6 +19,11 @@ export default {
   created() {
     this.$store.dispatch('getContent');
   },
+  computed: {
+    loaded() {
+      return this.$store.state.departments;
+    }
+  }
 }
 </script>
 
@@ -66,5 +71,9 @@ a {
     margin-top: -1px;
     margin-left: -1px;
     margin-right: -1px;
+}
+
+.md-card {
+  margin: 10px auto !important;
 }
 </style>
