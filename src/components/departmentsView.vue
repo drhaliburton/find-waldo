@@ -2,8 +2,8 @@
 
 <template>
 <div class="content-container">
-  <router-link v-for="(department, index) in departments" :key="index" tag="div" :to="'/departments/' + department.name">
-    <a>{{department.name}}</a>
+  <router-link v-for="(department, index) in departments" :key="index" tag="div" class='flex-cards' :to="'/departments/' + department.name">
+  <generic-card :department="department"></generic-card>
   </router-link>
 </div>
 </template>
@@ -30,4 +30,36 @@
 }
 
 </script>
+
+<style scoped>
+  .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .flex-cards {
+    flex: 45%;
+    margin: 1%;
+  }
+
+  .md-card {
+    height: 200px;
+
+  }
+
+  @media only screen and (max-width: 950px) {
+    .content-container {
+      flex-direction: column;
+    }
+
+    .flex-cards {
+      flex: 100%;
+    }
+
+    .md-card {
+      height: 150px;
+    }
+  }
+</style>
 
