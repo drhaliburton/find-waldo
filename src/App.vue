@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import appFrame from './components/Frame.vue'
+import appFrame from '@/components/partials/Frame.vue'
 import axios from 'axios'
 
 export default {
@@ -28,7 +28,6 @@ export default {
       .then(res => this.employees = res.data.employees);
     axios.get('/api/departments.json')
       .then(res => {
-        console.log(res)
         this.departments = res.data.departments
       });
   },

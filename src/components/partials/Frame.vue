@@ -15,7 +15,7 @@
 
         <div class="full-control">
           <div class="list">
-            <md-list :md-expand-single="expandSingle">
+            <md-list :md-expand-single="true">
               <md-list-item v-for="(department, index) in departments" :key="index" :department="department">
                 <md-icon>whatshot</md-icon>
                 <span class="md-list-item-text">{{department.name}}</span>
@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import employeeView from '@/components/employeeView';
 
 export default {
   name: 'Frame',
@@ -43,12 +42,9 @@ export default {
     employees: Object,
     departments: Array
   },
-  components: {
-    employeeView
-  },
   data() {
     return {
-      expandSingle: false,
+      expanded: false,
       expandNews: false,
       initial: '',
     }

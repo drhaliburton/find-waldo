@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import employeeCard from '@/components/employeeCard';
-import addressCard from '@/components/addressCard';
+import employeeCard from '@/components/partials/employeeCard';
+import addressCard from '@/components/partials/addressCard';
 
 export default {
   name: 'employeeView',
@@ -18,6 +18,14 @@ export default {
   components: {
     employeeCard,
     addressCard
+  },
+  watch: {
+    '$route.params.id' (id) {
+      console.log(id, 'id')
+    },
+  },
+  created() {
+    console.log(this.$route.params.id)
   }
 }
 
