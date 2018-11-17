@@ -24,8 +24,10 @@ export default {
       return this.$store.state.branch;
     }
   },
-  created() {
-    this.$store.dispatch('getBranches', this.$route.params.divisionName)
+  mounted() {
+    if (this.$store.state.branches) {
+      this.$store.dispatch('getBranches', this.$route.params.divisionName)
+    }
   },
   watch: {
     '$route.params.divisionName' (name) {

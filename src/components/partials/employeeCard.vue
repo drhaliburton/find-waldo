@@ -142,7 +142,7 @@ export default {
   text-align: left;
   height: auto;
   max-height: 0;
-  transition: max-height .8s ease;
+  transition: max-height .6s ease;
   overflow: hidden;
 }
 

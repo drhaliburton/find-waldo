@@ -12,6 +12,7 @@ import branchView from './components/branchView.vue'
 import employeesView from './components/employeesView.vue'
 import employeeView from './components/employeeView.vue'
 
+import employeeConfig from './employeeConfig.js'
 
 Vue.config.productionTip = false
 
@@ -78,9 +79,17 @@ const store = new Vuex.Store({
   },
   actions: {
     getContent({commit}) {
+      let indexCounter = 0;
       axios.get('/api/employees.json')
         .then(res => {
-          commit('employees', res.data.employees)
+          let employeesWithData = res.data.employees.map((employee, index) => {
+            employee.languages = employeeConfig[0].languages;
+            employee.skills = employeeConfig[0].skills;
+            employee.id = index;
+            // indexCounter = employeeConfig.length ? indexCounter = 0 : indexCounter++;
+            return employee;
+          });
+          commit('employees', employeesWithData)
         });
 
       axios.get('/api/organization.json')
@@ -122,14 +131,17 @@ const store = new Vuex.Store({
             return dep;
           })
           commit('divisions', divisionsArray)
+          commit('division', divisionsArray[0])
           commit('branches', branchesArray)
+          commit('branch', branchesArray[0])
           commit('units', unitsArray)
+          commit('unit', unitsArray[0])
           commit('departments', departments)
         });
     },
-    getEmployee({commit, state}, email) {
-      // const employee = state.employees.filter(employee => employee.email == email);
-      commit('employee', state.employees);
+    getEmployee({commit, state}, id) {
+      const employee = state.employees.filter(employee => employee.id == id);
+      commit('employee', employee);
     },
     getDivisions({ commit, state }, departmentName) {
       const division = state.divisions.filter(division => departmentName == division.department);

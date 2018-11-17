@@ -1,10 +1,10 @@
 <!-- Renders one employees details -->
 
 <template>
-<div class="content-container" v-if="employee">
-  <employee-card :employee.sync="employee"></employee-card>
+<div class="content-container">
+  <employee-card v-if="employee" :employee="employee[0]"></employee-card>
   <br>
-  <address-card :employee.sync="employee"></address-card>
+  <address-card v-if="employee" :employee="employee[0]"></address-card>
   <br><br>
   <md-button href="mailto:hey-your-data-is-bad@gov.ca">
     Report an Issue
@@ -22,22 +22,27 @@ export default {
     employeeCard,
     addressCard
   },
+  data() {
+    return {
+      employee: false,
+    }
+  },
   watch: {
     '$route.params.id' (id) {
       this.$store.dispatch('getEmployee', id)
     },
+    'stateEmployee' (employee) {
+      this.employee = employee;
+    }
   },
   computed: {
-    employee() {
-      return this.$store.state.employees[0];
+    stateEmployee() {
+      return this.$store.state.employee;
     },
   },
   created() {
     this.$store.dispatch('getEmployee', this.$route.params.id)
   },
-  beforeDestroy() {
-    this.$store.commit('employee', false);
-  }
 }
 
 </script>
