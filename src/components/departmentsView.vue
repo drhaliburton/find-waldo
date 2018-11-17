@@ -3,24 +3,18 @@
 <template>
 <div class="content-container">
   <router-link v-for="(department, index) in departments" :key="index" tag="div" class='flex-cards' :to="'/departments/' + department.name">
-  <generic-card :department="department"></generic-card>
+    <generic-card :department="department"></generic-card>
   </router-link>
 </div>
 </template>
 
 <script>
-
   import genericCard from '@/components/partials/genericCard.vue'
 
   export default {
-    name: 'genericView',
-    components: {
-      genericCard
-    },
-    watch: {
-    '$route.params.id' (id) {
-      this.$store.dispatch('getDepartment', id)
-    },
+  name: 'genericView',
+  components: {
+    genericCard
   },
   computed: {
     departments() {

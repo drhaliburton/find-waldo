@@ -52,6 +52,9 @@ const store = new Vuex.Store({
     departments(state, data) {
       state.departments = data;
     },
+    department(state, data) {
+      state.department = data;
+    },
     divisions(state, data) {
       state.divisions = data;
     },
@@ -121,7 +124,6 @@ const store = new Vuex.Store({
                   })
                   branchesArray = [...branchesArray, ...branches]
                   division.children = branches;
-                  return division;
                 }
                 return division;
               })
@@ -144,15 +146,27 @@ const store = new Vuex.Store({
       commit('employee', employee);
     },
     getDivisions({ commit, state }, departmentName) {
-      const division = state.divisions.filter(division => departmentName == division.department);
+      const division = state.divisions.filter(division => {
+        return departmentName == division.department
+      });
       commit('division', division);
     },
+    getDepartment({ commit, state }, departmentName) {
+      const department = state.departments.filter(department => {
+        return departmentName == department.name;
+      });
+      commit('department', department);
+    },
     getBranches({ commit, state }, divisionName) {
-      const branch = state.branches.filter(branch => branch.division == divisionName)
+      const branch = state.branches.filter(branch => {
+        return branch.division == divisionName
+      })
       commit('branch', branch);
     },
     getUnits({ commit, state }, branchName) {
-      const unit = state.units.filter(unit => unit.branch == branchName);
+      const unit = state.units.filter(unit => {
+        return unit.branch == branchName
+      });
       commit('unit', unit);
     },
   }
