@@ -1,27 +1,26 @@
 <template>
   <md-card>
     <md-card-header>
-
       <md-card-media md-medium>
         <img src="https://vuematerial.io/assets/examples/card-weather.png" alt="People">
       </md-card-media>
-
       <md-card-header-text>
         <div class="md-title">{{employee.first_name}} {{employee.last_name}}</div>
         <div class="md-subhead">{{employee.title}}</div>
-        <md-chip style="background-color: lightgrey">English</md-chip>
-        <md-chip style="background-color: lightgrey">French</md-chip>
-        <md-chip style="background-color: lightgrey">Support</md-chip>
+        <md-chip v-for="(item, index) in employee.language" :key="index" style="background-color: lightgrey">{{item}}</md-chip>
       </md-card-header-text>
-
       <md-icon :alt="employee.department">{{departmentLookup[employee.department]}}</md-icon>
-      <md-icon :alt="employee.division">{{divisionLookup[employee.division]}}</md-icon>
-      <md-icon :alt="employee.title">{{titleLookup[employee.title]}}</md-icon>
-
     </md-card-header>
 
     <md-card-content>
-      <p>{{employee.first_name}} {{employee.last_name}} is a member of the <b>{{employee.division}}</b> division of the <b>Department of {{employee.department}}.</b></p>
+      <div class="card-content">
+        <p>{{employee.first_name}} {{employee.last_name}} is a member of the <b>{{employee.division}}</b> division of the <b>Department of {{employee.department}}.</b></p>
+        <md-button @click="expandContent">
+          {{contentExpanded ? 'See Less' : 'See More'}}
+          <md-icon>{{contentExpanded ? 'expand_less' : 'expand_more'}}</md-icon>
+        </md-button>
+      </div>
+
       <role-info :contentExpanded="contentExpanded" :employee="{name: employee.first_name, skills: employee.skills}" :roleInfo="roleInfo"></role-info>
     </md-card-content>
 
@@ -34,16 +33,12 @@
         <md-icon>phone</md-icon>
         {{employee.phone_office}}
       </md-button>
-      <md-button class="float-right" @click="expandContent">
-        <md-icon>{{contentExpanded ? 'expand_less' : 'expand_more'}}</md-icon>
-        {{contentExpanded ? 'See Less' : 'See More'}}
-      </md-button>
     </md-card-actions>
   </md-card>
 </template>
 
 <script>
-import roleInfo from './partials/role-info'
+import roleInfo from '@/components/partials/role-info'
 
 export default {
   name: 'employeeCard',
@@ -51,7 +46,7 @@ export default {
     employee: Object
   },
   components: {
-    roleInfo
+    roleInfo,
   },
   data() {
     return {
@@ -70,6 +65,9 @@ export default {
   computed: {
     emailPath() {
       return `mailto:${this.employee.email}`;
+    },
+    mapsPath() {
+      return `http://maps.google.com/?q=${this.employee.office} ${this.employee.address} ${this.employee.postal_code}`
     },
     roleInfo() {
       let roleInfo = {
@@ -99,7 +97,8 @@ export default {
 
 <style>
 .md-card{
-  max-width: 600px;
+  max-width: 800px;
+  width: 100%;
   margin: auto;
   background-color: white;
 }
@@ -126,9 +125,8 @@ export default {
   margin: 0 5px !important;
 }
 
-.md-card-actions .md-button+.md-button:last-child {
-  margin-left: auto;
-  margin-right: 10px;
+.card-content {
+  text-align: right;
 }
 
 .md-card-content {
@@ -147,5 +145,11 @@ export default {
 .content-expanded {
   max-height: 400px;
   overflow: scroll;
+}
+
+
+p {
+  text-align: left;
+  margin-bottom: 0;
 }
 </style>

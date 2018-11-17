@@ -35,9 +35,7 @@
 
       <md-app-content>
         <div class="md-layout md-gutter md-alignment-center">
-          <div class="md-layout-item md-medium-size-33 md-small-size-50 md-xsmall-size-100">
-            <employee-card v-for="(employee, index) in employees" :key="index" :employee="employee"></employee-card>
-          </div>
+          <slot></slot>
         </div>
       </md-app-content>
     </md-app>
@@ -45,7 +43,7 @@
 </template>
 
 <script>
-import employeeCard from '@/components/employeeCard';
+import employeeView from '@/components/employeeView';
 
 export default {
   name: 'Frame',
@@ -53,7 +51,7 @@ export default {
     employees: Object
   },
   components: {
-    employeeCard
+    employeeView
   }
 }
 
@@ -68,6 +66,10 @@ export default {
   .md-drawer {
     width: 230px;
     max-width: calc(100vw - 125px);
+  }
+
+  .md-content {
+   background-color: #fafafa;
   }
 </style>
 

@@ -1,13 +1,14 @@
 <template>
   <div id="app">
     <div class="content-container">
-      <app-frame :employees="employees"></app-frame>
+      <app-frame>
+        <router-view v-if="employees" :employee="employees[0]"></router-view>
+      </app-frame>
     </div>
   </div>
 </template>
 
 <script>
-// import userCard from './components/UserCard.vue'
 import appFrame from './components/Frame.vue'
 import axios from 'axios'
 
@@ -15,7 +16,8 @@ export default {
   name: 'app',
   data() {
     return {
-      employees: false
+      employees: false,
+      departments: false,
     }
   },
   components: {
@@ -24,6 +26,9 @@ export default {
   created() {
     axios.get('/api/employees.json')
       .then(res => this.employees = res.data.employees);
+
+    // axios.get('/api/departments.json')
+    //   .then(res => this.employees = res.data.employees);
   },
 
 }
@@ -50,5 +55,10 @@ body {
 
 a {
   color: black;
+}
+
+.md-app:not(.md-overlap).md-theme-default {
+    height: 100vh;
+    overflow-x: hidden;
 }
 </style>
