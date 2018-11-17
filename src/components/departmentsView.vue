@@ -10,12 +10,17 @@
 
 <script>
 
+  import genericCard from '@/components/partials/genericCard.vue'
 
-export default {
-  name: 'departmentsView',
-  props: {
-  },
-  components: {
+  export default {
+    name: 'genericView',
+    components: {
+      genericCard
+    },
+    watch: {
+    '$route.params.id' (id) {
+      this.$store.dispatch('getDepartment', id)
+    },
   },
   computed: {
     departments() {
