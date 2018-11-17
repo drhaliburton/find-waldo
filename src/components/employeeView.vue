@@ -1,3 +1,5 @@
+<!-- Renders one employees details -->
+
 <template>
 <div class="md-layout-item md-medium-size-33 md-small-size-50 md-xsmall-size-100">
   <employee-card :employee="employee"></employee-card>

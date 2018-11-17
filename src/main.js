@@ -6,8 +6,8 @@ import 'vue-material/dist/vue-material.min.css';
 import VueMaterial from 'vue-material'
 
 import employeeView from './components/employeeView.vue'
-import departmentView from './components/departmentView.vue'
-import divisionView from './components/divisionView.vue'
+import departmentsView from './components/departmentsView.vue'
+import divisionsView from './components/divisionsView.vue'
 import employeesView from './components/employeesView.vue'
 
 Vue.use(VueMaterial)
@@ -16,9 +16,9 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/'},
   { path: '/employee/:id', component: employeeView },
-  { path: '/department/:name', component: departmentView },
-  { path: '/department/:name/divisions/:name', component: divisionView },
-  { path: '/department/:name/divisions/:name/employees', component: employeesView },
+  { path: '/departments/', component: departmentsView },
+  { path: '/departments/:name/divisions', component: divisionsView },
+  { path: '/departments/:name/divisions/:name/employees', component: employeesView },
 
 ]
 

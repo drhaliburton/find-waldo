@@ -1,3 +1,5 @@
+<!-- Lists all the divisions within one department -->
+
 <template>
 <div class="md-layout-item md-medium-size-33 md-small-size-50 md-xsmall-size-100">
 
