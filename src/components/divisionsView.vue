@@ -1,4 +1,4 @@
-<!-- Lists all the divisions within one department -->
+<!-- Lists all the divisions within one organization -->
 
 <template>
 <div class="content-container">
@@ -10,18 +10,15 @@
 
 
 export default {
-  name: 'divisionView',
+  name: 'divisionsView',
   props: {
   },
   components: {
   },
-  watch: {
-    '$route.params.name' (name) {
-      console.log(id, 'name')
-    },
-  },
-  created() {
-    console.log(this.$route.params.name)
+  computed: {
+    divisions() {
+      return this.$store.state.divisions;
+    }
   }
 }
 

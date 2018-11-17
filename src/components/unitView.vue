@@ -1,8 +1,7 @@
-<!-- Lists all the employees within one division -->
+<!-- List all unit -->
 
 <template>
 <div class="content-container">
-
 </div>
 </template>
 
@@ -10,8 +9,13 @@
 
 
 export default {
-  name: 'employeesView',
+  name: 'unitView',
   props: {
+  },
+  data() {
+    return {
+      unit: false,
+    }
   },
   components: {
   },

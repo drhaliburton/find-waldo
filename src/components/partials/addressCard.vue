@@ -35,10 +35,10 @@ export default {
   },
   computed: {
     mapsPath() {
-      return `http://maps.google.com/?q=${this.employee.office} ${this.employee.address} ${this.employee.postal_code}`
+      return `http://maps.google.com/?q=${this.employee.address} ${this.employee.postal_code}`
     },
     mapsQuery() {
-      return `?q=${this.employee.office} ${this.employee.address} ${this.employee.postal_code}`
+      return `?q=${this.employee.address} ${this.employee.postal_code}`
     }
   },
 }

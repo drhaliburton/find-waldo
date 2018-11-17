@@ -18,9 +18,9 @@
         <div class="full-control">
           <div class="list">
             <md-list :md-expand-single="true">
-              <md-list-item v-for="(department, index) in departments" :key="index" :department="department">
+              <md-list-item v-for="(departments, index) in departments" :key="index" :departments="departments">
                 <md-icon>whatshot</md-icon>
-                <span class="md-list-item-text">{{department.name}}</span>
+                <span class="md-list-item-text">{{departments.name}}</span>
               </md-list-item>
             </md-list>
           </div>
@@ -39,16 +39,20 @@
 <script>
 
 export default {
-  name: 'Frame',
-  props: {
-    employees: Object,
-    departments: Array
-  },
+  name: 'frame',
   data() {
     return {
-      expanded: false,
-      expandNews: false,
       initial: '',
+    }
+  },
+  computed: {
+    departments() {
+      return this.$store.state.departments;
+    }
+  },
+  created() {
+    if (!this.$store.state.departments) {
+      this.$store.dispatch('getContent');
     }
   }
 }

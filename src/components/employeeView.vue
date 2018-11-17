@@ -1,13 +1,12 @@
 <!-- Renders one employees details -->
 
 <template>
-<div class="content-container">
-  <employee-card :employee="employee"></employee-card>
+<div class="content-container" v-if="employee">
+  <employee-card :employee.sync="employee"></employee-card>
   <br>
-  <address-card :employee="employee"></address-card>
+  <address-card :employee.sync="employee"></address-card>
   <br><br>
-  <md-button href="mailto:complaints@gov.ca">
-    <!-- <md-icon>phone</md-icon> -->
+  <md-button href="mailto:hey-your-data-is-bad@gov.ca">
     Report an Issue
   </md-button>
 </div>
@@ -19,20 +18,25 @@ import addressCard from '@/components/partials/addressCard';
 
 export default {
   name: 'employeeView',
-  props: {
-    employee: Object
-  },
   components: {
     employeeCard,
     addressCard
   },
   watch: {
     '$route.params.id' (id) {
-      console.log(id, 'id')
+      this.$store.dispatch('getEmployee', id)
+    },
+  },
+  computed: {
+    employee() {
+      return this.$store.state.employees[0];
     },
   },
   created() {
-    console.log(this.$route.params.id)
+    this.$store.dispatch('getEmployee', this.$route.params.id)
+  },
+  beforeDestroy() {
+    this.$store.commit('employee', false);
   }
 }
 

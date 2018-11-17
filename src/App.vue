@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div class="content-container">
-      <app-frame v-if="departments" :departments="departments">
-        <router-view v-if="employees" :employee="employees[0]"></router-view>
+      <app-frame>
+        <router-view></router-view>
       </app-frame>
     </div>
   </div>
@@ -10,26 +10,14 @@
 
 <script>
 import appFrame from '@/components/partials/Frame.vue'
-import axios from 'axios'
 
 export default {
   name: 'app',
-  data() {
-    return {
-      employees: false,
-      departments: false
-    }
-  },
   components: {
     appFrame
   },
   created() {
-    axios.get('/api/employees.json')
-      .then(res => this.employees = res.data.employees);
-    axios.get('/api/departments.json')
-      .then(res => {
-        this.departments = res.data.departments
-      });
+    this.$store.dispatch('getContent');
   },
 
 
