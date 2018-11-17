@@ -14,7 +14,7 @@ Vue.use(VueMaterial)
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/'},
+  { path: '/', redirect: '/departments'},
   { path: '/employee/:id', component: employeeView },
   { path: '/departments/', component: departmentsView },
   { path: '/departments/:name/divisions', component: divisionsView },
