@@ -1,13 +1,12 @@
 <template>
   <div id="app">
     <div class="content-container">
-      <app-frame :employees="employees"></app-frame>
+      <app-frame :employees="employees" :departments="departments"></app-frame>
     </div>
   </div>
 </template>
 
 <script>
-// import userCard from './components/UserCard.vue'
 import appFrame from './components/Frame.vue'
 import axios from 'axios'
 
@@ -15,7 +14,8 @@ export default {
   name: 'app',
   data() {
     return {
-      employees: false
+      employees: false,
+      departments: false
     }
   },
   components: {
@@ -24,7 +24,10 @@ export default {
   created() {
     axios.get('/api/employees.json')
       .then(res => this.employees = res.data.employees);
+    axios.get('/api/departments.json')
+      .then(res => this.departments = res.data.departments);
   },
+
 
 }
 </script>
@@ -43,7 +46,7 @@ body {
 }
 
 .content-container {
-  max-width: 1200px;
+  max-width: 1500px;
   background-color: white;
   margin: auto;
 }
