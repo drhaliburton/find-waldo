@@ -5,7 +5,7 @@
   <ul>
     <li v-for="(skill, index) in employee.skills" :key="index">{{skill}}</li>
   </ul>
-  <b><md-icon>{{roleInfo.division.icon}}</md-icon>{{roleInfo.division.label}}</b>
+  <b><md-icon>{{roleInfo.department.icon}}</md-icon>{{roleInfo.department.label}}</b>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin tempor eros, sed semper nunc aliquet at. Duis pulvinar risus quis libero ultricies fermentum. Etiam ullamcorper at est ornare consequat.  <br><br>
   <b><md-icon>{{roleInfo.division.icon}}</md-icon>{{roleInfo.division.label}}</b>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin tempor eros, sed semper nunc aliquet at. Duis pulvinar risus quis libero ultricies fermentum. Etiam ullamcorper at est ornare consequat.  <br><br>

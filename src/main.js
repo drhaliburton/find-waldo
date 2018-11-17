@@ -23,9 +23,11 @@ const routes = [
   { path: '/', redirect: '/departments'},
   { path: '/employee/:id', component: employeeView },
   { path: '/departments/', component: departmentsView },
-  { path: '/divisions/', component: divisionsView },
-  { path: '/divisions/:divisionName/branch', component: branchView },
-  { path: '/divisions/:divisionName/branch/:branchName/employees', component: employeesView },
+  { path: '/departments/:departmentName', component: divisionsView },
+  { path: '/departments/:departmentName/employees', component: employeesView },
+  { path: '/departments/:departmentName/divisions/:divisionName', component: branchView },
+  { path: '/departments/:departmentName/divisions/:divisionName/employees', component: employeesView },
+  { path: '/departments/:departmentName/divisions/:divisionName/branch/:branchName/employees', component: employeesView },
 ]
 
 const router = new VueRouter({
@@ -36,10 +38,14 @@ const store = new Vuex.Store({
   state: {
     employees: false,
     employee: false,
+    divisions: false,
     division: false,
+    branches: false,
     branch: false,
+    units: false,
     unit: false,
     departments: false,
+    department: false,
   },
   mutations: {
     departments(state, data) {
@@ -69,7 +75,6 @@ const store = new Vuex.Store({
     employee(state, data) {
       state.employee = data;
     },
-
   },
   actions: {
     getContent({commit}) {
@@ -80,33 +85,45 @@ const store = new Vuex.Store({
 
       axios.get('/api/organization.json')
         .then(res => {
+          let divisionsArray = [];
+          let branchesArray = [];
+          let unitsArray = [];
           let departments = res.data.children.map((dep, depIndex) => {
             dep.id = depIndex;
             if (dep.children) {
               let divisions = dep.children.map((division, divisionIndex) => {
                 division.id = divisionIndex;
+                division.department = dep.name;
                 if (division.children) {
                   let branches = division.children.map((branch, branchIndex) => {
                     branch.id = branchIndex;
+                    branch.division = division.name;
                     if (branch.children) {
                       let units = branch.children.map((unit, unitIndex) => {
                         unit.id = unitIndex;
+                        unit.branch = branch.name;
+                        return unit;
                       })
-                      commit('units', units);
                       branch.children = units;
+                      unitsArray = [...unitsArray, ...units];
+                      return units;
                     }
                     return branch;
                   })
-                  commit('branches', branches)
+                  branchesArray = [...branchesArray, ...branches]
                   division.children = branches;
+                  return division;
                 }
                 return division;
               })
-              commit('divisions', divisions)
+              divisionsArray = [...divisionsArray, ...divisions]
               dep.children = divisions;
             }
             return dep;
           })
+          commit('divisions', divisionsArray)
+          commit('branches', branchesArray)
+          commit('units', unitsArray)
           commit('departments', departments)
         });
     },
@@ -114,16 +131,16 @@ const store = new Vuex.Store({
       // const employee = state.employees.filter(employee => employee.email == email);
       commit('employee', state.employees);
     },
-    getDivision({ commit, state }, id) {
-      const division = state.divisions.filter(division => division.id == id);
+    getDivisions({ commit, state }, departmentName) {
+      const division = state.divisions.filter(division => departmentName == division.department);
       commit('division', division);
     },
-    getBranch({ commit, state }, id) {
-      const branch = state.branchs.filter(branch => branch.id == id);
+    getBranches({ commit, state }, divisionName) {
+      const branch = state.branches.filter(branch => branch.division == divisionName)
       commit('branch', branch);
     },
-    getUnit({ commit, state }, id) {
-      const unit = state.units.filter(unit => unit.id == id);
+    getUnits({ commit, state }, branchName) {
+      const unit = state.units.filter(unit => unit.branch == branchName);
       commit('unit', unit);
     },
   }

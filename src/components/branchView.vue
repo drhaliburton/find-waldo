@@ -2,9 +2,11 @@
 
 <template>
 <div class="content-container">
+  <router-link v-if="branches" v-for="(branch, index) in branches" :key="index" tag="div" :to="branchRoute(branch)">
+    <a>{{branch.name}}</a>
+  </router-link>
 </div>
 </template>
-
 <script>
 
 
@@ -17,13 +19,29 @@ export default {
       branch: false,
     }
   },
-  watch: {
-    '$route.params.branchName' (name) {
-      console.log(id, 'name')
-    },
+  computed: {
+    branches() {
+      return this.$store.state.branch;
+    }
   },
   created() {
-    console.log(this.$route.params.branchName)
+    this.$store.dispatch('getBranches', this.$route.params.divisionName)
+  },
+  watch: {
+    '$route.params.divisionName' (name) {
+      this.$store.dispatch('getBranches', this.$route.params.divisionName)
+    },
+  },
+  methods: {
+    branchRoute(branch) {
+      let path = this.$route.path;
+      if (branch.children) {
+        path = path + '/branches/' + branch.name;
+      } else {
+        path = path + '/branches/' + branch.name + '/employees';
+      }
+      return path;
+    }
   }
 }
 

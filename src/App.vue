@@ -19,8 +19,6 @@ export default {
   created() {
     this.$store.dispatch('getContent');
   },
-
-
 }
 </script>
 
