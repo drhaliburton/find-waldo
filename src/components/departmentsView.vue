@@ -3,7 +3,7 @@
 <template>
 <div class="content-container">
   <h1>Yukon Government Departments</h1>
-  <generic-card v-for="(department, index) in departments" :key="index" :department="department" :click="goToRoute"></generic-card>
+  <generic-card v-if="department.children" v-for="(department, index) in departments" :key="index" :department="department" :click="() => goToRoute(department, index)"></generic-card>
 </div>
 </template>
 
@@ -12,23 +12,24 @@
 
   export default {
   name: 'genericView',
+  props: ['content', 'formatRoute'],
   components: {
     genericCard
   },
   computed: {
     departments() {
-      return this.$store.state.departments;
+      return this.content;
     }
   },
   methods: {
-    goToRoute(department) {
-      console.log('asdfasdf')
-      let path = this.$route.path;
+    goToRoute(department, index) {
+      let path = '/';
       if (department.children) {
-        path = path + '/' + department.name;
+        path = path + 'departments/'+ index;
       } else {
-        path = path + '/' + department.name + '/employees';
+        path = path + 'departments/'+ index + '/employees';
       }
+      console.log(path)
       this.$router.push(path);
     }
   }

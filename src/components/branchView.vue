@@ -1,12 +1,10 @@
 <!-- List all branch -->
 
 <template>
-<span>
-  <h1>{{this.$route.params.branchName}} Branches</h1>
-  <span v-for="(branch, index) in branches" :key="index" @click="goToRoute(branch)">
-    <generic-card :department="branch" :click="goToRoute"></generic-card>
-  </span>
-</span>
+<div class="content-container">
+  <h1>{{branches.name}} Branches</h1>
+  <generic-card v-if="!branch[index]" v-for="(branch, index) in branches" :key="index" :department="branch" :click="() => goToRoute(branch, index)"></generic-card>
+</div>
 </template>
 
 <script>
@@ -14,36 +12,23 @@ import genericCard from '@/components/partials/genericCard.vue'
 
 export default {
   name: 'branchView',
+  props: ['content'],
   components: {
     genericCard
   },
-  data() {
-    return {
-      branch: false,
-    }
-  },
   computed: {
     branches() {
-      return this.$store.state.branch;
+      return this.content[this.$route.params.index].children[this.$route.params.divIndex].children;
     }
-  },
-  mounted() {
-    if (this.$store.state.branches) {
-      this.$store.dispatch('getBranches', this.$route.params.divisionName)
-    }
-  },
-  watch: {
-    '$route.params.divisionName' (name) {
-      this.$store.dispatch('getBranches', this.$route.params.divisionName)
-    },
   },
   methods: {
-    goToRoute(branch) {
+    goToRoute(branch, index) {
+      console.log(branch)
       let path = this.$route.path;
-      if (branch.children) {
-        path = path + '/branches/' + branch.name;
+      if (branch && branch.children) {
+        path = path + '/branches/' + index;
       } else {
-        path = path + '/branches/' + branch.name + '/employees';
+        path = path + '/branches/' + index + '/employees';
       }
       this.$router.push(path)
     }

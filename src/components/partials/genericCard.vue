@@ -11,7 +11,7 @@
         {{renderDescription(department)}}
       </md-card-content>
 
-      <md-button @click="click(department)">
+      <md-button @click="click()">
         View Department
       </md-button>
     </md-ripple>

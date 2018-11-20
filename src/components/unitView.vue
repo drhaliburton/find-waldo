@@ -1,46 +1,30 @@
 
 <template>
 <div class="content-container">
-  <router-link v-if="units" v-for="(unit, index) in units" :key="index" tag="div" :to="unitRoute(unit)">
-    <a>{{unit.name}}</a>
-  </router-link>
+  <h1>Units</h1>
+  <generic-card v-for="(unit, index) in units" :key="index" @click="() => goToRoute(unit, index)" :department="unit" :click="goToRoute"></generic-card>
 </div>
 </template>
-<script>
 
+
+<script>
+import genericCard from '@/components/partials/genericCard.vue'
 
 export default {
   name: 'unitView',
-  props: {
-  },
-  data() {
-    return {
-      unit: false,
-    }
+  props: ['content'],
+  components: {
+    genericCard,
   },
   computed: {
     units() {
-      return this.$store.state.units;
+      return this.content[this.$route.params.index].children[this.$route.params.divIndex].children[this.$route.params.unitIndex].children;
     }
-  },
-  created() {
-    if (!this.units) {
-      this.$store.dispatch('getunits', this.$route.params.branchName)
-    }
-  },
-  watch: {
-    '$route.params.branchName' (name) {
-      this.$store.dispatch('getunits', this.$route.params.branchName)
-    },
   },
   methods: {
-    unitRoute(unit) {
-      let path = this.$route.path;
-      if (unit.children) {
-        path = path + '/units/' + unit.name;
-      } else {
-        path = path + '/units/' + unit.name + '/employees';
-      }
+    goToRoute(unit, index) {
+      let path = this.$route.path + '/units/' + index + '/employees';
+      console.log(path)
       return path;
     }
   }

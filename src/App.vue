@@ -1,13 +1,13 @@
 <template>
-  <div id="app">
-    <app-frame v-if="loaded">
+  <div id="app" v-if="departments">
+    <app-frame :formatRoute="formatRoute">
       <md-field v-if="!this.$route.path.includes('employee/')">
         <label>Search</label>
         <md-input v-model="searchQuery"></md-input>
         <div class="md-toolbar-section-end">
         </div>
       </md-field>
-      <router-view></router-view>
+      <router-view v-if="employees" :content="departments" :formatRoute="formatRoute"></router-view>
     </app-frame>
   </div>
 </template>
@@ -29,8 +29,29 @@ export default {
     this.$store.dispatch('getContent');
   },
   computed: {
-    loaded() {
+    departments() {
       return this.$store.state.departments;
+    },
+    employees() {
+      return this.$store.state.employees;
+    }
+  },
+  methods: {
+    formatRoute(name) {
+       if (name) {
+        let path = name.includes(',') ? name.replace(",", "").toLowerCase().split(' ') : name.toLowerCase().split(' ');
+        path = path.map((word, index) => {
+          if (index + 1 !== path.length) {
+            return (word + '-');
+          } else {
+            return word;
+          }
+        })
+        let route = path.join('');
+        return route;
+      } else {
+        return 'misc'
+      }
     }
   }
 }

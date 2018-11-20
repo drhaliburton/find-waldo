@@ -2,16 +2,10 @@
 
 <template>
 <div class="content-container">
-  <h1>{{this.$route.params.departmentName}} Divisions</h1>
-  <generic-card v-if="divisions" v-for="(division, index) in divisions" :key="index" :department="division" :click="goToRoute"></generic-card>
+  {{divisions}}
+  <h1>{{divisions.name}} Divisions</h1>
+  <generic-card v-if="divisions" v-for="(division, index) in divisions.children" :key="index" :department="division" :click="() => goToRoute(division, index)"></generic-card>
 </div>
-
-<!-- <div class="content-container">
-  <div v-for="(division, index) in divisions" :key="index" @click="goToRoute(division)">
-    <generic-card :department="division" :click="goToRoute"></generic-card>
-  </div>
-</div> -->
-
 </template>
 
 <script>
@@ -22,32 +16,27 @@ export default {
   components: {
     genericCard
   },
-  props: {
-  },
+  props: ['content', 'formatRoute'],
   computed: {
     divisions() {
-      return this.$store.state.division;
+      return this.content[this.$route.params.index];
     },
   },
   components: {
     genericCard
   },
-  watch: {
-    '$route.params.departmentName' (name) {
-      this.$store.dispatch('getDivisions', this.$route.params.departmentName)
-    },
-  },
   mounted() {
-    this.$store.dispatch('getDivisions', this.$route.params.departmentName)
-  },
+    console.log('hello', this.content)
+},
   methods: {
-    goToRoute(division) {
+    goToRoute(division, index) {
       let path = this.$route.path;
       if (division.children) {
-        path = path + '/divisions/' + division.name;
+        path = path + '/divisions/' + index;
       } else {
-        path = path + '/divisions/' + division.name + '/employees';
+        path = path + '/divisions/' + index + '/employees';
       }
+      console.log(path)
       this.$router.push(path);
     }
   }

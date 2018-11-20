@@ -17,7 +17,7 @@
         </md-toolbar>
 
         <md-list>
-          <router-link v-if="department.name" v-for="(department, index) in departments" :key="index" tag="div" :to="'/departments/' + department.name">
+          <router-link v-if="department.children" v-for="(department, index) in departments" :key="index" tag="div" :to="'/departments/' + index">
             <md-list-item class='foo-block'>
             <md-icon>{{renderIcon(department)}}</md-icon>
               {{department.name}}
@@ -36,6 +36,7 @@
 <script>
   export default {
   name: 'frame',
+  props: ['content', 'formatRoute'],
   data() {
     return {
       initial: '',
