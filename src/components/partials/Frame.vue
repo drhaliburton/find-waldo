@@ -5,8 +5,8 @@
         <md-button class="md-icon-button" @click="toggleMenu" v-if="!menuVisible">
           <md-icon>menu</md-icon>
         </md-button>
-        <span class="md-title">Find a Government Employee</span>
         <img class="yukon-logo" src="https://yukon.ca/sites/yukon.ca/themes/yukon_wxt/logo-white.svg"></img>
+        <span class="md-title">Find a Government Employee</span>
       </md-app-toolbar>
 
       <md-app-drawer :md-active.sync="menuVisible" md-persistent="mini">
@@ -14,12 +14,6 @@
           <md-button class="md-icon-button md-dense" @click="toggleMenu">
             <md-icon>chevron_left</md-icon>
           </md-button>
-          <md-field>
-            <label>Search</label>
-            <md-input v-model="initial"></md-input>
-            <div class="md-toolbar-section-end">
-            </div>
-          </md-field>
         </md-toolbar>
 
         <md-list>
@@ -199,7 +193,7 @@
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .md-app {
     min-height: 350px;
     border: 1px solid rgba(#000, .12);
@@ -211,8 +205,7 @@
   }
 
   .yukon-logo {
-    margin-left: auto;
-    margin-right: 5px;
+    margin-right: 25px;
     width: 10%;
     max-width: 90px;
   }
@@ -232,4 +225,28 @@
   .md-content {
    background-color: #fafafa;
   }
+
+.md-list-item-content {
+  padding: 4px 8px;
+  justify-content: left;
+}
+
+.md-drawer.md-persistent-mini.md-left {
+ border-left: 1px solid lightgrey !important;
+}
+.md-drawer.md-persistent-mini:not(.md-active) {
+  width: 60px !important;
+  .md-list-item-content {
+  padding: 0 !important;
+}
+}
+
+.md-list-item-content>.md-icon:first-child {
+  margin-right: 17px;
+}
+
+.md-toolbar {
+  position: sticky;
+  z-index: 999;
+}
 </style>

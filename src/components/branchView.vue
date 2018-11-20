@@ -1,9 +1,12 @@
 <!-- List all branch -->
 
 <template>
-<div class="content-container">
-  <generic-card v-if="branches" v-for="(branch, index) in branches" :key="index" :department="branch" :click="goToRoute"></generic-card>
-</div>
+<span>
+  <h1>{{this.$route.params.branchName}} Branches</h1>
+  <span v-for="(branch, index) in branches" :key="index" @click="goToRoute(branch)">
+    <generic-card :department="branch" :click="goToRoute"></generic-card>
+  </span>
+</span>
 </template>
 
 <script>

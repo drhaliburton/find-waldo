@@ -2,8 +2,16 @@
 
 <template>
 <div class="content-container">
+  <h1>{{this.$route.params.departmentName}} Divisions</h1>
   <generic-card v-if="divisions" v-for="(division, index) in divisions" :key="index" :department="division" :click="goToRoute"></generic-card>
 </div>
+
+<!-- <div class="content-container">
+  <div v-for="(division, index) in divisions" :key="index" @click="goToRoute(division)">
+    <generic-card :department="division" :click="goToRoute"></generic-card>
+  </div>
+</div> -->
+
 </template>
 
 <script>

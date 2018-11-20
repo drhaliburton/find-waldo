@@ -48,6 +48,7 @@ const store = new Vuex.Store({
     unit: false,
     departments: false,
     department: false,
+    depArray: [],
   },
   mutations: {
     departments(state, data) {
@@ -87,17 +88,10 @@ const store = new Vuex.Store({
   actions: {
     getContent({commit}) {
       let indexCounter = 0;
-      axios.get('/api/employees.json')
-        .then(res => {
-          let employeesWithData = res.data.employees.map((employee, index) => {
-            employee.languages = employeeConfig[0].language;
-            employee.skills = employeeConfig[0].skills;
-            employee.id = index;
-            indexCounter > employeeConfig.length - 1 ? indexCounter = 0 : indexCounter++;
-            return employee;
-          });
-          commit('employees', employeesWithData)
-        });
+      let depLookup = {};
+      let divisionLookup = {};
+      let branchLookup = {};
+      let unitLookup = {};
 
       axios.get('/api/organization.json')
         .then(res => {
@@ -105,6 +99,7 @@ const store = new Vuex.Store({
           let branchesArray = [];
           let unitsArray = [];
           let departments = res.data.children.map((dep) => {
+            depLookup[dep.name] = { name: dep.name, employees: [] }
             if (dep.children) {
               let divisions = dep.children.map((division) => {
                 division.department = dep.name;
@@ -113,22 +108,29 @@ const store = new Vuex.Store({
                     branch.division = division.name;
                     if (branch.children) {
                       let units = branch.children.map((unit) => {
+                        unitLookup[unit.name] = { name: unit.name, employees: [] }
                         unit.branch = branch.name;
                         return unit;
                       })
                       branch.children = units;
                       unitsArray = [...unitsArray, ...units];
                       return units;
+                    } else {
+                      branchLookup[branch.name] = { name: branch.name, employees: [] }
                     }
                     return branch;
                   })
                   branchesArray = [...branchesArray, ...branches]
                   division.children = branches;
+                } else {
+                  divisionLookup[division.name] = { name: division.name, employees: [] }
                 }
                 return division;
               })
               divisionsArray = [...divisionsArray, ...divisions]
               dep.children = divisions;
+            } else {
+              depLookup[dep.name] = { name: dep.name, employees: [] }
             }
             return dep;
           })
@@ -139,24 +141,65 @@ const store = new Vuex.Store({
           commit('units', unitsArray)
           commit('unit', unitsArray[0])
           commit('departments', departments)
-        });
+        })
+        .then(() => {
+          axios.get('/api/employees-long.json')
+            .then(res => {
+              let employeesWithData = res.data.employees.map((employee, index) => {
+                depLookup[employee.department].employees.push(employee);
+                employee.languages = employeeConfig[0].language;
+                employee.skills = employeeConfig[0].skills;
+                employee.id = index;
+                indexCounter > employeeConfig.length - 1 ? indexCounter = 0 : indexCounter++;
+
+                if (employee.unit) {
+                  unitLookup[employee.unit].employees.push(employee)
+                  return employee;
+                }
+                if (employee.branch && branchLookup[employee.branch]) {
+                  branchLookup[employee.branch].employees.push(employee)
+                  return employee;
+                } else {
+                  branchLookup[employee.branch] = {
+                    name: employee.branch,
+                    employees: [employee],
+                  }
+                }
+                if (employee.division && divisionLookup[employee.division]) {
+                  divisionLookup[employee.division].employees.push(employee)
+                  return employee;
+                } else {
+                  divisionLookup[employee.division] = {
+                    name: employee.division,
+                    employees: [employee],
+                  }
+                }
+                if (employee.department) {
+                  depLookup[employee.department].employees.push(employee)
+                  return employee;
+                }
+              });
+              commit('employees', employeesWithData)
+            });
+        })
     },
     getEmployee({commit, state}, id) {
       const employee = state.employees.filter(employee => employee.id == id);
       commit('employee', employee);
     },
     getFilteredEmployees({commit, state}, routes) {
-      let filteredEmployees = state.employees.filter(employee => {
-        if (routes.branchName) {
-          return (employee.branch == routes.branchName) && (employee.division == routes.divisionName) && (employee.department == routes.departmentName);
-        }
-        if (routes.divisionName) {
-          return (employee.division == routes.divisionName) && (employee.department == routes.departmentName);
-        }
-        if (routes.departmentName) {
-          return employee.department == routes.departmentName
-        }
-      })
+      // let filteredEmployees = state.employees.filter(employee => {
+      //   if (routes.branchName && (employee.branch == routes.branchName) && (employee.division == routes.divisionName) && (employee.department == routes.departmentName)) {
+      //     return employee;
+      //   }
+      //   if (routes.divisionName && (employee.division == routes.divisionName)) {
+      //     return employee;
+      //   }
+      //   if (routes.departmentName && (employee.department == routes.departmentName)) {
+      //     return employee;
+      //   }
+      //   return false;
+      // })
       commit('filteredEmployees', filteredEmployees);
     },
     getDivisions({ commit, state }, departmentName) {

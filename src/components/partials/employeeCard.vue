@@ -96,7 +96,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .md-card{
   max-width: 800px;
   width: 100%;

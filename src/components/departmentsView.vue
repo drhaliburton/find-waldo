@@ -2,6 +2,7 @@
 
 <template>
 <div class="content-container">
+  <h1>Yukon Government Departments</h1>
   <generic-card v-for="(department, index) in departments" :key="index" :department="department" :click="goToRoute"></generic-card>
 </div>
 </template>
@@ -21,6 +22,7 @@
   },
   methods: {
     goToRoute(department) {
+      console.log('asdfasdf')
       let path = this.$route.path;
       if (department.children) {
         path = path + '/' + department.name;
@@ -34,35 +36,7 @@
 
 </script>
 
-<style scoped>
-  .content-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
+<style>
 
-  .flex-cards {
-    flex: 45%;
-    margin: 1%;
-  }
-
-  .md-card {
-    height: 200px;
-
-  }
-
-  @media only screen and (max-width: 950px) {
-    .content-container {
-      flex-direction: column;
-    }
-
-    .flex-cards {
-      flex: 100%;
-    }
-
-    .md-card {
-      height: 150px;
-    }
-  }
 </style>
 

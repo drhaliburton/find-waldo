@@ -1,10 +1,14 @@
 <template>
   <div id="app">
-    <div class="content-container" v-if="loaded">
-      <app-frame>
-        <router-view></router-view>
-      </app-frame>
-    </div>
+    <app-frame v-if="loaded">
+      <md-field v-if="!this.$route.path.includes('employee/')">
+        <label>Search</label>
+        <md-input v-model="searchQuery"></md-input>
+        <div class="md-toolbar-section-end">
+        </div>
+      </md-field>
+      <router-view></router-view>
+    </app-frame>
   </div>
 </template>
 
@@ -16,7 +20,12 @@ export default {
   components: {
     appFrame
   },
-  created() {
+  data() {
+    return {
+      searchQuery: '',
+    }
+  },
+  mounted() {
     this.$store.dispatch('getContent');
   },
   computed: {
@@ -65,6 +74,11 @@ a {
   color: black;
 }
 
+h1 {
+  width: 100%;
+  font-weight: 600;
+  margin: 40px 10px;
+}
 .md-app:not(.md-overlap).md-theme-default {
     height: 100vh;
     overflow-x: hidden;
@@ -73,8 +87,27 @@ a {
     margin-right: -1px;
 }
 
-.md-card {
-  margin: 10px auto !important;
-  height: auto !important;
-}
+  .content-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .md-card {
+    margin: 10px !important;
+  }
+
+
+  @media only screen and (max-width: 1050px) {
+
+    .md-card {
+      width: 100% !important;
+    }
+  }
+
+  .md-card {
+    width: 30%;
+    height: auto;
+    margin: 10px;
+  }
+
 </style>
