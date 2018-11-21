@@ -19,7 +19,7 @@ export default {
   components: {
     userCard,
   },
-  mounted() {
+  created() {
       this.$store.dispatch('getFilteredEmployees', this.$route.params)
   },
   computed: {
@@ -31,6 +31,9 @@ export default {
     goToRoute(employee) {
       this.$router.push('/employee/' + employee.id);
     }
+  },
+  beforeDestroy() {
+    this.$store.commit('filteredEmployees', false)
   }
 }
 </script>

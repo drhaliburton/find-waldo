@@ -24,9 +24,6 @@ export default {
   components: {
     genericCard
   },
-  mounted() {
-    console.log('hello', this.content)
-},
   methods: {
     goToRoute(division, index) {
       let path = this.$route.path;
@@ -35,7 +32,6 @@ export default {
       } else {
         path = path + '/divisions/' + index + '/employees';
       }
-      console.log(path)
       this.$router.push(path);
     }
   }

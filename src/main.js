@@ -59,7 +59,7 @@ const store = new Vuex.Store({
   state: {
     employees: false,
     employee: false,
-    filteredEmployess: false,
+    filteredEmployess: [],
     divisions: false,
     division: false,
     branches: false,
@@ -226,20 +226,42 @@ const store = new Vuex.Store({
     },
     getFilteredEmployees({commit, state}, params) {
       let filteredEmployees = false;
-      if (params.index) {
+      let depName = false;
+      let divName = false;
+      let branchName = false;
+
+      if (params.index && state.dep[formatRoute(state.departments[params.index].name)]) {
         filteredEmployees = state.dep[formatRoute(state.departments[params.index].name)].employees
+        depName = state.departments[params.index].name;
       }
-      if (params.divIndex) {
+      if (params.divIndex && state.divisions[formatRoute(state.departments[params.index].children[params.divIndex].name)]) {
         filteredEmployees = state.divisions[formatRoute(state.departments[params.index].children[params.divIndex].name)].employees
+        divName = state.departments[params.index].children[params.divIndex].name;
       }
-      if (params.branchIndex) {
-        filteredEmployees = state.branches[formatRoute(state.departments[params.index].children[params.divIndex].children[params.branchIndex].name)].employees
+      if (params.branchIndex && state.branches[formatRoute(state.departments[params.index].children[params.divIndex].children[params.branchIndex].name)]) {
+        filteredEmployees = state.branches[formatRoute(state.departments[params.index].children[params.divIndex].children[params.branchIndex].name)].employees;
+        branchName = state.departments[params.index].children[params.divIndex].children[params.branchIndex].name;
       }
       // if (state.units[formatRoute(params.units)]) {
       //   filteredEmployees = state.units[formatRoute(state.branches[params.branchIndex].name)].employees;
       // }
-      console.log(filteredEmployees)
-      commit('filteredEmployees', filteredEmployees);
+      let filtered = filteredEmployees.filter(employee => {
+        let result = false;
+        if (employee.department === depName) {
+          result = employee;
+        }
+        if (employee.department === depName && employee.division === divName) {
+          result = employee;
+        }
+        if (employee.department === depName && employee.division === divName && employee.branch === branchName) {
+          result = employee;
+        }
+        if (result) {
+          return result;
+        }
+      })
+      console.log(filtered);
+      commit('filteredEmployees', filtered);
     },
     getDivisions({ commit, state }, departmentName) {
       const division = state.divisions.filter(division => {
