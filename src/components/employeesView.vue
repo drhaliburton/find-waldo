@@ -2,6 +2,7 @@
 
 <template>
 <div class="content-container">
+  <user-card v-for="(employee, index) in employees" :key="index" :user="employee" :click="() => goToRoute(employee)"></user-card>
 </div>
 </template>
 
@@ -23,7 +24,7 @@ export default {
   },
   computed: {
     employees() {
-      return this.$store.state.filteredEmpoyees;
+      return this.$store.state.filteredEmployees;
     }
   },
   methods: {

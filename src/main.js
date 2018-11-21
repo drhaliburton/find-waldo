@@ -23,6 +23,7 @@ Vue.use(VueRouter)
 
 function formatRoute(name) {
   if (name) {
+    console.log
     let path = name.includes(',') ? name.replace(",", "").toLowerCase().split(' ') : name.toLowerCase().split(' ');
     path = path.map((word, index) => {
       if (index + 1 !== path.length) {
@@ -186,6 +187,13 @@ const store = new Vuex.Store({
                   }
                 }
 
+                if (employee.department && !depLookup[formatRoute(employee.department)]) {
+                  depLookup[formatRoute(employee.department)] = {
+                    name: employee.department,
+                    employees: [employee],
+                  }
+                }
+
                 if (employee.unit) {
                   unitLookup[formatRoute(employee.unit)].employees.push(employee)
                 }
@@ -197,9 +205,15 @@ const store = new Vuex.Store({
                 if (employee.division) {
                   divisionLookup[formatRoute(employee.division)].employees.push(employee)
                 }
+
+                if (employee.department) {
+                  depLookup[formatRoute(employee.department)].employees.push(employee)
+                }
+
                 return employee;
               });
               commit('employees', employeesWithData)
+              commit('dep', depLookup)
               commit('divisions', divisionLookup)
               commit('branches', branchLookup)
               commit('units', unitLookup)
@@ -212,14 +226,19 @@ const store = new Vuex.Store({
     },
     getFilteredEmployees({commit, state}, params) {
       let filteredEmployees = false;
-      if (state.divisions[formatRoute(state.departments[params.index].name)]) {
-        filteredEmployees = state.divisions[formatRoute(state.departments[params.index].name)].employees;
-      } else if (state.branches[formatRoute(params.branch)]) {
-        filteredEmployees = state.branches[formatRoute(state.divisions[params.divIndex].name)].employees;
-      } else if (state.units[formatRoute(params.units)]) {
-        filteredEmployees = state.units[formatRoute(state.divisions[params.branchIndex].name)].employees;
+      if (params.index) {
+        filteredEmployees = state.dep[formatRoute(state.departments[params.index].name)].employees
       }
-      console.log(filteredEmployees, formatRoute(state.departments[params.index].name))
+      if (params.divIndex) {
+        filteredEmployees = state.divisions[formatRoute(state.departments[params.index].children[params.divIndex].name)].employees
+      }
+      if (params.branchIndex) {
+        filteredEmployees = state.branches[formatRoute(state.departments[params.index].children[params.divIndex].children[params.branchIndex].name)].employees
+      }
+      // if (state.units[formatRoute(params.units)]) {
+      //   filteredEmployees = state.units[formatRoute(state.branches[params.branchIndex].name)].employees;
+      // }
+      console.log(filteredEmployees)
       commit('filteredEmployees', filteredEmployees);
     },
     getDivisions({ commit, state }, departmentName) {

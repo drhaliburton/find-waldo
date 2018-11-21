@@ -35,7 +35,7 @@
 
 <script>
   export default {
-  name: 'frame',
+  name: 'appFrame',
   props: ['content', 'formatRoute'],
   data() {
     return {

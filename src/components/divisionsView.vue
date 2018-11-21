@@ -2,7 +2,6 @@
 
 <template>
 <div class="content-container">
-  {{divisions}}
   <h1>{{divisions.name}} Divisions</h1>
   <generic-card v-if="divisions" v-for="(division, index) in divisions.children" :key="index" :department="division" :click="() => goToRoute(division, index)"></generic-card>
 </div>

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import appFrame from '@/components/partials/Frame.vue'
+import appFrame from '@/components/partials/app-frame.vue'
 
 export default {
   name: 'app',
