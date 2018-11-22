@@ -1,7 +1,7 @@
 <!-- Lists all the employees within one organization -->
 
 <template>
-<div class="content-container">
+<div class="content-container" v-if="employeesArr">
   <h1>{{employeesArr[0].department}} Employees</h1>
   <user-card v-if="employeesArr" v-for="(employee, index) in employeesArr" :key="employee[index]" :user="employee" :click="() => goToRoute(employee)"></user-card>
   <address-card v-if="employeesArr" :employee="employeesArr[0]"></address-card>
