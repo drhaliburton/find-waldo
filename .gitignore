@@ -2,8 +2,6 @@
 node_modules
 /dist
 
-public/api
-
 # local env files
 .env.local
 .env.*.local
