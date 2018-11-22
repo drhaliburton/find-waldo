@@ -117,6 +117,7 @@ h1 {
   width: 100%;
   font-weight: 600;
   margin: 40px 10px;
+  line-height: 30px;
 }
 
 .md-app:not(.md-overlap).md-theme-default {
@@ -135,7 +136,7 @@ h1 {
 .md-card {
   margin: 10px !important;
   .md-button {
-    margin: 10px
+    margin: 10px;
   }
 }
 
@@ -183,5 +184,49 @@ html {
 .action-button {
   display: block;
   margin: 20px auto;
+}
+.md-app-container {
+  padding-left: 60px;
+}
+
+.md-active {
+  .md-app-container {
+    padding-left: 0px;
+  }
+}
+
+  .yukon-logo {
+    margin-right: 25px;
+    width: 10%;
+    max-width: 90px;
+  }
+
+@media only screen and (max-width: 600px) {
+  .md-button {
+    display: block;
+  }
+
+  .md-card-actions {
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .md-card-actions.md-alignment-left {
+    justify-content: center;
+    .md-button {
+      margin: 10px auto;
+    }
+  }
+}
+
+.md-list-item-content {
+    padding: 0px 5px;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+    width: 275px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
 }
 </style>

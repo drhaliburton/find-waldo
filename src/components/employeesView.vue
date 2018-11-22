@@ -2,9 +2,9 @@
 
 <template>
 <div class="content-container">
-  <h1>Employees</h1>
-  <user-card v-if="employees.length" v-for="(employee, index) in employees" :key="index" :user="employee" :click="goToRoute"></user-card>
-  <address-card v-if="employees.length" :employee="employees[0]"></address-card>
+  <h1>{{employeesArr[0].department}} Employees</h1>
+  <user-card v-if="employeesArr" v-for="(employee, index) in employeesArr" :key="employee[index]" :user="employee" :click="() => goToRoute(employee)"></user-card>
+  <address-card v-if="employeesArr" :employee="employeesArr[0]"></address-card>
 </div>
 </template>
 
@@ -23,17 +23,38 @@ export default {
     userCard,
     addressCard,
   },
-  created() {
-      this.$store.dispatch('getFilteredEmployees', this.$route.params)
+  mounted() {
+    this.getFilteredEmployees()
+    if (this.employees.length) {
+      this.employeesArr = this.employees;
+    }
+  },
+  data() {
+    return {
+        employeesArr: false,
+    }
   },
   computed: {
     employees() {
       return this.$store.state.filteredEmployees;
     },
   },
+  watch: {
+    '$route' (to, from) {
+      if (to.path !== from.path) {
+        console.log('hello')
+        this.getFilteredEmployees().then(res => {
+            this.employeesArr = res
+          })
+      }
+    }
+  },
   methods: {
     goToRoute(employee) {
       this.$router.push('/employee/' + employee.id);
+    },
+    getFilteredEmployees() {
+      return this.$store.dispatch('getFilteredEmployees', this.$route.params)
     }
   },
   beforeDestroy() {

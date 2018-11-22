@@ -17,12 +17,12 @@
         </md-toolbar>
 
         <md-list>
-          <router-link v-if="department.children" v-for="(department, index) in departments" :key="index" tag="div" :to="'/departments/' + index">
+          <div v-for="(department, index) in departments" :key="index" @click="goToRoute(department, index)">
             <md-list-item class='foo-block'>
             <md-icon>{{renderIcon(department)}}</md-icon>
               {{department.name}}
             </md-list-item>
-          </router-link>
+          </div>
         </md-list>
       </md-app-drawer>
 
@@ -179,7 +179,21 @@
         icon = this.departmentLookup[item.name].icon;
       }
       return icon;
-    }
+    },
+    goToRoute(department, index) {
+      let path = '/';
+      let reload = false;
+      if (department.children) {
+        path = path + 'departments/'+ index;
+      } else {
+        path = path + 'departments/'+ index + '/employees';
+        reload = true;
+      }
+      this.$router.push(path);
+      // if (reload) {
+      //   Location.reload()
+      // }
+    },
   },
   computed: {
     departments() {
@@ -194,7 +208,7 @@
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .md-app {
     min-height: 350px;
     border: 1px solid rgba(#000, .12);
@@ -203,12 +217,6 @@
    // Demo purposes only
   .md-drawer {
     max-width: 300px;
-  }
-
-  .yukon-logo {
-    margin-right: 25px;
-    width: 10%;
-    max-width: 90px;
   }
 
   .md-toolbar.md-theme-default.md-transparent {
@@ -226,19 +234,6 @@
   .md-content {
    background-color: #fafafa;
   }
-
-.md-list-item-content {
-    padding: 0px 5px;
-    -webkit-box-pack: left;
-    -ms-flex-pack: left;
-    justify-content: left;
-    width: 275px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    display: inline-block;
-}
 
 .md-drawer.md-persistent-mini.md-left {
  border-left: 1px solid lightgrey !important;

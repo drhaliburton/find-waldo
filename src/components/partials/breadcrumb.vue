@@ -27,7 +27,6 @@ export default {
   methods: {
     getRouterHistory() {
       if (this.$route.name !== 'employee') {
-        console.log(this.$route.name)
          let lookup = this.content;
           let routerArray = []
           if (this.$route.params.index) {
@@ -46,7 +45,6 @@ export default {
       } else {
         this.routerHistory = this.$store.state.routerHistory;
       }
-      console.log(this.$store.state.routerHistory)
     }
   }
 }
@@ -69,6 +67,8 @@ ul {
 
 .breadcrumb {
   float: left;
+  margin: 10px 0 15px;
+
   span {
     font-size: 16px;
     padding: 10px 0;
@@ -83,4 +83,5 @@ ul {
   }
 
 }
+
 </style>

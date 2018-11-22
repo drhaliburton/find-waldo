@@ -3,7 +3,7 @@
 <template>
 <div class="content-container">
   <h1>Yukon Government Departments</h1>
-  <generic-card v-if="department.children" v-for="(department, index) in departments" :key="index" :department="department" :click="() => goToRoute(department, index)"></generic-card>
+  <generic-card v-for="(department, index) in departments" :key="index" :department="department" :click="() => goToRoute(department, index)"></generic-card>
 </div>
 </template>
 

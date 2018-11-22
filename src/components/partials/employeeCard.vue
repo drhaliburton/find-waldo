@@ -131,6 +131,7 @@ export default {
 
 .md-card-content {
   padding: 0 16px !important;
+  min-height: auto;
 }
 
 .md-app-content .md-card {

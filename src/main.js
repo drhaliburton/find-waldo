@@ -285,6 +285,7 @@ const store = new Vuex.Store({
         }
       }) : false;
       commit('filteredEmployees', filtered);
+      return new Promise((resolve) => resolve(filtered))
     },
     getDivisions({ commit, state }, departmentName) {
       const division = state.divisions.filter(division => {
