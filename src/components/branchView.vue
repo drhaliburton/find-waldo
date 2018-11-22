@@ -2,7 +2,9 @@
 
 <template>
 <div class="content-container">
-  <h1>{{branches.name}} Branches</h1>
+  <h1>{{branches.name}} Branches
+      <md-button class="action-button" @click="viewEmployees">View All Employees</md-button>
+  </h1>
   <generic-card v-if="!branch[0]" v-for="(branch, index) in branchArray" :key="index" :department="branch || branch[0]" :click="() => goToRoute(branch, index)"></generic-card>
 </div>
 </template>
@@ -29,6 +31,11 @@ export default {
   created() {
     this.parseBranches()
   },
+  mounted() {
+    if (!this.branches) {
+      this.$router.go(-1)
+    }
+  },
   methods: {
     goToRoute(branch, index) {
       let path = this.$route.path;
@@ -51,6 +58,9 @@ export default {
         }
       })
       this.branchArray = results;
+    },
+    viewEmployees() {
+      this.$router.push((this.$route.path + '/employees'))
     }
   },
 }

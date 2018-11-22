@@ -1,6 +1,7 @@
 <template>
   <div id="app" v-if="departments">
     <app-frame :formatRoute="formatRoute">
+      <breadcrumb :content="departments"></breadcrumb>
       <md-field v-if="!this.$route.path.includes('employee/')">
         <label>Search</label>
         <md-input v-model="searchQuery"></md-input>
@@ -14,11 +15,14 @@
 
 <script>
 import appFrame from '@/components/partials/app-frame.vue'
+import breadcrumb from '@/components/partials/breadcrumb.vue'
+
 
 export default {
   name: 'app',
   components: {
-    appFrame
+    appFrame,
+    breadcrumb,
   },
   data() {
     return {
@@ -34,6 +38,9 @@ export default {
     },
     employees() {
       return this.$store.state.employees;
+    },
+    routeHistory() {
+      return this.$router;
     }
   },
   methods: {
@@ -127,10 +134,16 @@ h1 {
 
 .md-card {
   margin: 10px !important;
+  .md-button {
+    margin: 10px
+  }
 }
 
 .md-content {
   width: 100% !important;
+  .md-card-content{
+    min-height: 100px;
+  }
 }
 
 
@@ -165,5 +178,10 @@ html {
 
 .md-overlay {
   display: none;
+}
+
+.action-button {
+  display: block;
+  margin: 20px auto;
 }
 </style>

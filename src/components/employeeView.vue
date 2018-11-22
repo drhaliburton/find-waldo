@@ -6,9 +6,11 @@
   <br>
   <address-card v-if="employee" :employee="employee[0]"></address-card>
   <div class="text-center">
+  <div>
   <md-button href="mailto:hey-your-data-is-bad@gov.ca">
     Report an Issue
   </md-button>
+  </div>
   </div>
 </div>
 </template>
@@ -66,6 +68,6 @@ export default {
 }
 
 .md-icon.md-theme-default.md-icon-font {
-      margin-right: 3px !important;
+  margin-right: 3px !important;
 }
 </style>

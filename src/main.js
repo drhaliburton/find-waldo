@@ -14,6 +14,7 @@ import employeeView from './components/employeeView.vue'
 import unitView from './components/unitView.vue'
 
 import employeeConfig from './components/employeeConfig.js'
+import departmentLookup from './components/departmentLookup.js'
 
 Vue.config.productionTip = false
 
@@ -54,7 +55,7 @@ function parseBranches(branches) {
 
 const routes = [
   { path: '/', component: departmentsView },
-  { path: '/employee/:id', component: employeeView },
+  { path: '/employee/:id', component: employeeView, name: 'employee' },
   { path: '/departments/', component: departmentsView },
   { path: '/departments/:index', component: divisionsView },
   { path: '/departments/:index/employees', component: employeesView },
@@ -82,6 +83,7 @@ const store = new Vuex.Store({
     departments: false,
     dep: false,
     depArray: [],
+    routerHistory: [],
   },
   mutations: {
     departments(state, data) {
@@ -116,6 +118,9 @@ const store = new Vuex.Store({
     },
     filteredEmployees(state, data) {
       state.filteredEmployees = data;
+    },
+    setRouterHistory(state, history) {
+      state.routerHistory = history;
     }
   },
   actions: {
@@ -165,6 +170,7 @@ const store = new Vuex.Store({
             } else {
               depLookup[formatRoute(dep.name)] = { name: dep.name, employees: [] }
             }
+            dep.descripton = departmentLookup[dep.name].descripton ? departmentLookup[dep.name].descripton : 'Lorem'
             return dep;
           })
           commit('departments', res.data.children)
@@ -259,11 +265,11 @@ const store = new Vuex.Store({
         filteredEmployees = state.branches[formatRoute(branch.name)].employees;
       } else if (div && state.divisions[formatRoute(div.name)]) {
         filteredEmployees = state.divisions[formatRoute(div.name)].employees;
-      } else {
+      } else if (dep) {
         filteredEmployees = state.dep[formatRoute(dep.name)].employees;
       }
 
-      let filtered = filteredEmployees.filter(employee => {
+      let filtered = filteredEmployees ? filteredEmployees.filter(employee => {
         let result = false;
         if (employee.department === dep.name) {
           result = employee;
@@ -277,7 +283,7 @@ const store = new Vuex.Store({
         if (result) {
           return result;
         }
-      })
+      }) : false;
       commit('filteredEmployees', filtered);
     },
     getDivisions({ commit, state }, departmentName) {

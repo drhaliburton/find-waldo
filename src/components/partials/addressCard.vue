@@ -3,8 +3,7 @@
     <md-card-header>
       <md-card-header-text>
         <div class="md-title">
-          <b>{{employee.department}}</b>
-          <br>{{employee.office}}</div>
+          <b>{{employee.department}}</b> - {{employee.office}}</div>
         <div class="md-subhead">
           {{employee.address}}, <span v-if="employee.suite">{{employee.suite}}</span><br>
           {{employee.community}}, {{employee.postal_code}}<br>

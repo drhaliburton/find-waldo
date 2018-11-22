@@ -5,7 +5,7 @@ let departmentLookup = {
   },
   "Cabinet Office": {
     icon: 'account_balance',
-      description: 'The Yukon government caucus members make up the Premier\'s team'
+    description: 'The Yukon government caucus members make up the Premier\'s team'
   },
   "Child and Youth Advocate Office": {
     icon: 'face',

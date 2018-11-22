@@ -3,7 +3,7 @@
     <md-ripple>
       <md-card-header>
         <div class="md-title">
-        <md-icon v-if="department.type == 'department'">{{departmentLookup[department.name].icon}}</md-icon>
+        <md-icon v-if="department.type == 'department'">{{this.departmentLookup[department.name].icon}}</md-icon>
         {{department.name}}</div>
       </md-card-header>
 
@@ -22,16 +22,24 @@
 import departmentLookup from '@/components/departmentLookup.js'
 
 export default {
-  name: 'RegularCards',
+  name: 'genericCard',
   props: {
     department: Object,
     click: Function,
+  },
+  data() {
+    return {
+      departmentLookup: false,
+    }
   },
   methods: {
     renderDescription (item) {
       let description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet orci non velit aliquam rutrum. Nullam sollicitudin augue urna, nec dignissim diam molestie id.';
       if (item.type == 'department') {
-        description = departmentLookup[item.name].description;;
+        description = this.departmentLookup[item.name].description;;
+      }
+      if (item.description) {
+        return item.description;
       }
       return description;
     }
@@ -40,6 +48,9 @@ export default {
     this.$el.addEventListener('click', ()=> {
       this.click(this.department);
     })
+  },
+  created() {
+    this.departmentLookup = departmentLookup;
   },
   data() {
     return {

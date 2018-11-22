@@ -91,7 +91,6 @@ export default {
   },
   created() {
     this.departmentLookup = departmentLookup;
-    console.log(departmentLookup)
   },
 }
 </script>

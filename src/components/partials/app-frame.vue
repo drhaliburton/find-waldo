@@ -254,6 +254,10 @@
   margin-right: 17px;
 }
 
+.md-list-item-content:hover {
+  cursor:pointer;
+}
+
 .md-toolbar {
   position: sticky;
   z-index: 999;

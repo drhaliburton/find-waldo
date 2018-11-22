@@ -29,9 +29,8 @@
       } else {
         path = path + 'departments/'+ index + '/employees';
       }
-      console.log(path)
       this.$router.push(path);
-    }
+    },
   }
 }
 

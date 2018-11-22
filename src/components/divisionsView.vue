@@ -2,8 +2,10 @@
 
 <template>
 <div class="content-container">
-  <h1>{{divisions.name}} Divisions</h1>
-  <generic-card v-for="(division, index) in divisionArray" :key="index" :department="division" :click="() => goToRoute(division, index)"></generic-card>
+  <h1>{{divisions.name}} Divisions
+      <md-button class="action-button" @click="viewEmployees">View All Employees</md-button>
+  </h1>
+  <generic-card v-if="divisionArray" v-for="(division, index) in divisionArray" :key="index" :department="division" :click="() => goToRoute(division, index)"></generic-card>
 </div>
 </template>
 
@@ -32,9 +34,13 @@ export default {
   created() {
     this.parseDivisions()
   },
+  watch: {
+    'divisions' (div) {
+      this.parseDivisions()
+    },
+  },
   methods: {
     goToRoute(division, index) {
-      console.log('clicked')
       let path = this.$route.path;
       if (division.children) {
         path = path + '/divisions/' + index;
@@ -55,6 +61,9 @@ export default {
         }
       })
       this.divisionArray = results;
+    },
+    viewEmployees() {
+      this.$router.push((this.$route.path + '/employees'))
     }
   }
 }
