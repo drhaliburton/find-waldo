@@ -228,8 +228,16 @@
   }
 
 .md-list-item-content {
-  padding: 4px 8px;
-  justify-content: left;
+    padding: 0px 5px;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+    width: 275px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: inline-block;
 }
 
 .md-drawer.md-persistent-mini.md-left {
@@ -250,4 +258,12 @@
   position: sticky;
   z-index: 999;
 }
+
+@media only screen and (max-width: 1050px) {
+  .md-button {
+    display: none;
+  }
+}
+
+
 </style>

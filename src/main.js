@@ -23,7 +23,6 @@ Vue.use(VueRouter)
 
 function formatRoute(name) {
   if (name) {
-    console.log
     let path = name.includes(',') ? name.replace(",", "").toLowerCase().split(' ') : name.toLowerCase().split(' ');
     path = path.map((word, index) => {
       if (index + 1 !== path.length) {
@@ -37,6 +36,20 @@ function formatRoute(name) {
   } else {
     return 'misc'
   }
+}
+
+function parseBranches(branches) {
+  let results = [];
+  branches.map(branch => {
+    if (branch.length) {
+      branch.map(b => {
+        results.push(b)
+      })
+    } else {
+      results.push(branch)
+    }
+  })
+  return results;
 }
 
 const routes = [
@@ -209,7 +222,6 @@ const store = new Vuex.Store({
                 if (employee.department) {
                   depLookup[formatRoute(employee.department)].employees.push(employee)
                 }
-
                 return employee;
               });
               commit('employees', employeesWithData)
@@ -226,41 +238,46 @@ const store = new Vuex.Store({
     },
     getFilteredEmployees({commit, state}, params) {
       let filteredEmployees = false;
-      let depName = false;
-      let divName = false;
-      let branchName = false;
+      let dep = false;
+      let div = false;
+      let branch = false;
 
       if (params.index && state.dep[formatRoute(state.departments[params.index].name)]) {
-        filteredEmployees = state.dep[formatRoute(state.departments[params.index].name)].employees
-        depName = state.departments[params.index].name;
+        dep = state.departments[params.index];
       }
-      if (params.divIndex && state.divisions[formatRoute(state.departments[params.index].children[params.divIndex].name)]) {
-        filteredEmployees = state.divisions[formatRoute(state.departments[params.index].children[params.divIndex].name)].employees
-        divName = state.departments[params.index].children[params.divIndex].name;
+      if (params.divIndex && dep.children && dep.children[params.divIndex]) {
+        div = dep.children[params.divIndex]
       }
-      if (params.branchIndex && state.branches[formatRoute(state.departments[params.index].children[params.divIndex].children[params.branchIndex].name)]) {
-        filteredEmployees = state.branches[formatRoute(state.departments[params.index].children[params.divIndex].children[params.branchIndex].name)].employees;
-        branchName = state.departments[params.index].children[params.divIndex].children[params.branchIndex].name;
+      if (div.children) {
+        div.children = parseBranches(div.children)
       }
-      // if (state.units[formatRoute(params.units)]) {
-      //   filteredEmployees = state.units[formatRoute(state.branches[params.branchIndex].name)].employees;
-      // }
+      if (params.branchIndex && div.children && div.children[params.branchIndex]) {
+        branch = div.children[params.branchIndex]
+      }
+
+      if (branch && state.branches[formatRoute(branch.name)]) {
+        filteredEmployees = state.branches[formatRoute(branch.name)].employees;
+      } else if (div && state.divisions[formatRoute(div.name)]) {
+        filteredEmployees = state.divisions[formatRoute(div.name)].employees;
+      } else {
+        filteredEmployees = state.dep[formatRoute(dep.name)].employees;
+      }
+
       let filtered = filteredEmployees.filter(employee => {
         let result = false;
-        if (employee.department === depName) {
+        if (employee.department === dep.name) {
           result = employee;
         }
-        if (employee.department === depName && employee.division === divName) {
+        if (employee.department === dep.name && employee.division === div.name) {
           result = employee;
         }
-        if (employee.department === depName && employee.division === divName && employee.branch === branchName) {
+        if (employee.department === dep.name && employee.division === div.name && employee.branch === branch.name) {
           result = employee;
         }
         if (result) {
           return result;
         }
       })
-      console.log(filtered);
       commit('filteredEmployees', filtered);
     },
     getDivisions({ commit, state }, departmentName) {

@@ -2,15 +2,14 @@
   <md-card md-with-hover>
     <md-ripple>
       <md-card-header>
-        <div class="md-title">{{user.first_name}} {{user.last_name}}</div>
-                <div class="md-subhead">        {{user.title}}
-
-                  </div>
+        <div class="md-title"><md-icon>face</md-icon><br>{{user.first_name}} {{user.last_name}}</div>
+          <div class="md-subhead">
+            {{user.title}}
+        </div>
       </md-card-header>
-
-          <md-button @click="click(user)">
-          View More
-        </md-button>
+      <md-button>
+        View More
+      </md-button>
     </md-ripple>
   </md-card>
 </template>
@@ -22,6 +21,11 @@ export default {
     user: Object,
     click: Function,
   },
+  mounted() {
+    this.$el.addEventListener('click', ()=> {
+      this.click(this.user);
+    })
+  }
 }
 </script>
 
@@ -33,6 +37,12 @@ export default {
 
 .md-card-content {
   text-align: center !important;
+}
+
+.md-icon {
+  font-size: 25px !important;
+  padding: 0 15px;
+  margin-top: -5px;
 }
 
 

@@ -3,7 +3,7 @@
 <template>
 <div class="content-container">
   <h1>{{branches.name}} Branches</h1>
-  <generic-card v-if="!branch[index]" v-for="(branch, index) in branches" :key="index" :department="branch" :click="() => goToRoute(branch, index)"></generic-card>
+  <generic-card v-if="!branch[0]" v-for="(branch, index) in branchArray" :key="index" :department="branch || branch[0]" :click="() => goToRoute(branch, index)"></generic-card>
 </div>
 </template>
 
@@ -18,12 +18,19 @@ export default {
   },
   computed: {
     branches() {
-      return this.content[this.$route.params.index].children[this.$route.params.divIndex].children;
+      return this.content[this.$route.params.index].children[this.$route.params.divIndex];
     }
+  },
+  data() {
+    return {
+      branchArray: []
+    }
+  },
+  created() {
+    this.parseBranches()
   },
   methods: {
     goToRoute(branch, index) {
-      console.log(branch)
       let path = this.$route.path;
       if (branch && branch.children) {
         path = path + '/branches/' + index;
@@ -31,8 +38,21 @@ export default {
         path = path + '/branches/' + index + '/employees';
       }
       this.$router.push(path)
+    },
+    parseBranches() {
+      let results = [];
+      this.branches.children.map(branch => {
+        if (branch.length) {
+          branch.map(b => {
+            results.push(b)
+          })
+        } else {
+          results.push(branch)
+        }
+      })
+      this.branchArray = results;
     }
-  }
+  },
 }
 
 </script>

@@ -61,9 +61,16 @@ export default {
 @import "~vue-material/dist/theme/engine";
 @import "~vue-material/dist/theme/all";
 
-.md-app-container {
-  overflow-x: hidden !important;
+::-webkit-scrollbar
+{
+    width: 0px;
 }
+::-webkit-scrollbar-track-piece
+{
+    background-color: transparent;
+    -webkit-border-radius: 6px;
+}
+
 
 .md-toolbar.md-theme-default.md-primary,
 .md-field.md-theme-default:before {
@@ -72,6 +79,10 @@ export default {
 
 .md-field.md-theme-default.md-focused label, {
   color: #244C5A;
+}
+
+.md-app-internal-drawer, .md-app-side-drawer .md-app-container {
+  width: 100%;
 }
 
 #app {
@@ -88,7 +99,7 @@ body {
 
 .content-container {
   max-width: 1500px;
-  margin: auto;
+  justify-content: center;
 }
 
 a {
@@ -100,6 +111,7 @@ h1 {
   font-weight: 600;
   margin: 40px 10px;
 }
+
 .md-app:not(.md-overlap).md-theme-default {
     height: 100vh;
     overflow-x: hidden;
@@ -108,27 +120,50 @@ h1 {
     margin-right: -1px;
 }
 
-  .content-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.md-card {
+  margin: 10px !important;
+}
+
+.md-content {
+  width: 100% !important;
+}
+
+
+@media only screen and (max-width: 1050px) {
   .md-card {
-    margin: 10px !important;
+    width: 100% !important;
   }
 
-
-  @media only screen and (max-width: 1050px) {
-
-    .md-card {
-      width: 100% !important;
-    }
+  .md-drawer {
+    display: none;
   }
 
-  .md-card {
-    width: 30%;
-    height: auto;
-    margin: 10px;
+  .md-app-scroller {
+    padding-left: 0 !important;
   }
+}
 
+.md-card {
+  width: 30%;
+  height: auto;
+  margin: 10px;
+}
+.text-center {
+  margin: auto;
+  text-align: center;
+}
+
+html {
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+}
+
+.md-overlay {
+  display: none;
+}
 </style>

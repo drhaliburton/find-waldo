@@ -2,7 +2,9 @@
 <md-card>
     <md-card-header>
       <md-card-header-text>
-        <div class="md-title">{{employee.office}}</div>
+        <div class="md-title">
+          <b>{{employee.department}}</b>
+          <br>{{employee.office}}</div>
         <div class="md-subhead">
           {{employee.address}}, <span v-if="employee.suite">{{employee.suite}}</span><br>
           {{employee.community}}, {{employee.postal_code}}<br>
@@ -14,7 +16,7 @@
 
 
     <md-card-actions md-alignment="left">
-      <md-button :href="mapsPath" target="_blank">
+      <md-button :href="mapsDirections" target="_blank">
         <md-icon>directions</md-icon>
         Directions
       </md-button>
@@ -37,8 +39,8 @@ export default {
     mapsPath() {
       return `http://maps.google.com/?q=${this.employee.address} ${this.employee.postal_code}`
     },
-    mapsQuery() {
-      return `?q=${this.employee.address} ${this.employee.postal_code}`
+    mapsDirections() {
+      return `http://maps.google.com/maps/dir//${this.employee.address} ${this.employee.postal_code}`
     }
   },
 }
@@ -68,6 +70,10 @@ export default {
 .md-button-content {
   display: flex;
   align-items: center;
+}
+
+.md-title {
+  font-size: 22px;
 }
 
 .md-icon {

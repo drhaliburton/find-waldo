@@ -10,7 +10,7 @@
         <div class="md-subhead">{{employee.title}}</div>
         <md-chip v-for="(item, index) in employee.languages" :key="index" style="background-color: lightgrey">{{item}}</md-chip>
       </md-card-header-text>
-      <md-icon :alt="employee.department">home</md-icon>
+      <md-icon :alt="employee.department">{{employeeIcon(employee)}}</md-icon>
     </md-card-header>
 
     <md-card-content>
@@ -22,7 +22,7 @@
         </md-button>
       </div>
 
-      <role-info :contentExpanded="contentExpanded" :employee="{name: employee.first_name, skills: employee.skills}" :roleInfo="roleInfo"></role-info>
+      <role-info :contentExpanded="contentExpanded" :employee="{name: employee.first_name, skills: employee.skills}" :roleInfo="roleInfo()"></role-info>
     </md-card-content>
 
     <md-card-actions md-alignment="left">
@@ -40,6 +40,7 @@
 
 <script>
 import roleInfo from '@/components/partials/role-info'
+import departmentLookup from '@/components/departmentLookup.js'
 
 export default {
   name: 'employeeCard',
@@ -52,15 +53,7 @@ export default {
   data() {
     return {
       contentExpanded: false,
-      departmentLookup: {
-        "Highways and Public Works": 'directions_car',
-      },
-      titleLookup: {
-        "eServices Web Architect": 'computer',
-      },
-      divisionLookup: {
-        "Information and Communications Technology": 'phone',
-      },
+      departmentLookup: false,
     }
   },
   computed: {
@@ -70,29 +63,36 @@ export default {
     mapsPath() {
       return `http://maps.google.com/?q=${this.employee.office} ${this.employee.address} ${this.employee.postal_code}`
     },
+  },
+  methods: {
+    expandContent() {
+      this.contentExpanded = !this.contentExpanded;
+    },
+    employeeIcon(employee) {
+      return this.departmentLookup[employee.department].icon;
+    },
     roleInfo() {
       let roleInfo = {
         title: {
           label: this.employee.title,
-          icon: this.titleLookup[this.employee.title],
+          icon: 'accessibility',
         },
         department: {
           label: this.employee.department,
-          icon: this.departmentLookup[this.employee.department],
+          icon: this.departmentLookup[this.employee.department].icon,
         },
         division: {
           label: this.employee.division,
-          icon: this.divisionLookup[this.employee.division],
+          icon: 'flag',
         }
       }
       return roleInfo;
     }
   },
-  methods: {
-    expandContent() {
-      this.contentExpanded = !this.contentExpanded;
-    }
-  }
+  created() {
+    this.departmentLookup = departmentLookup;
+    console.log(departmentLookup)
+  },
 }
 </script>
 

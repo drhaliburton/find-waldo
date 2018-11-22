@@ -5,8 +5,8 @@
   <ul>
     <li v-for="(skill, index) in employee.skills" :key="index">{{skill}}</li>
   </ul>
-  <span v-if="roleInfo.department.label">
-    <b><md-icon>favorite</md-icon>{{roleInfo.department.label}}</b>
+  <span>
+    <b><md-icon>{{roleInfo.department.icon}}</md-icon>{{roleInfo.department.label}}</b>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin tempor eros, sed semper nunc aliquet at. Duis pulvinar risus quis libero ultricies fermentum. Etiam ullamcorper at est ornare consequat.  <br><br>
   </span>
   <span v-if="roleInfo.division.label">
@@ -30,13 +30,6 @@ export default {
     roleInfo: Object,
     contentExpanded: Boolean,
   },
-  data() {
-    return {
-      divisionLookup: {
-        "Highways and Public Works": ''
-      }
-    }
-  },
 }
 </script>
 
@@ -52,6 +45,6 @@ ul {
 
 .md-icon {
   font-size: 18px!important;
-  margin-left: 0 !important;
+  margin: 0 3px 0 0;
 }
 </style>
