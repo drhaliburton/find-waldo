@@ -1,0 +1,3748 @@
+{
+  "type": "government",
+  "name": "Yukon",
+  "order": 0,
+  "mailcode": null,
+  "children": [
+    {
+      "type": "department",
+      "name": "Cabinet Office",
+      "order": 100,
+      "mailcode": "CM1"
+    },
+    {
+      "type": "department",
+      "name": "Child and Youth Advocate Office",
+      "order": 100,
+      "mailcode": "Q2"
+    },
+    {
+      "type": "department",
+      "name": "Commissioners Office",
+      "order": 100,
+      "mailcode": "A20"
+    },
+    {
+      "type": "department",
+      "name": "Community Services",
+      "order": 10,
+      "mailcode": "CM6",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM6"
+        },
+        {
+          "type": "division",
+          "name": "Deputy Minister's Office",
+          "order": 20,
+          "mailcode": "C1"
+        },
+        {
+          "type": "division",
+          "name": "Branch reports direct to CS DM",
+          "order": 30,
+          "mailcode": "C1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Communications",
+              "order": 30,
+              "mailcode": "C4"
+            },
+            {
+              "type": "branch",
+              "name": "Finance, Systems and Administration",
+              "order": 30,
+              "mailcode": "C3",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Finance and Space Planning",
+                  "order": 30,
+                  "mailcode": "C3"
+                },
+                {
+                  "type": "unit",
+                  "name": "Information Systems",
+                  "order": 30,
+                  "mailcode": "C3"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Human Resources",
+              "order": 30,
+              "mailcode": "C2"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Corporate Policy and Consumer Affairs",
+          "order": 40,
+          "mailcode": "C5A",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 40,
+              "mailcode": "C5A"
+            },
+            {
+              "type": "branch",
+              "name": "Corporate Affairs",
+              "order": 40,
+              "mailcode": "C6"
+            },
+            {
+              "type": "branch",
+              "name": "Corporate Policy",
+              "order": 40,
+              "mailcode": "C4"
+            },
+            {
+              "type": "branch",
+              "name": "Employment Standards and Residential Tenancies",
+              "order": 40,
+              "mailcode": "C7"
+            },
+            {
+              "type": "branch",
+              "name": "Professional Licensing and Regulatory Affairs",
+              "order": 40,
+              "mailcode": "C5"
+            },
+            {
+              "type": "branch",
+              "name": "Property Assessment and Taxation",
+              "order": 40,
+              "mailcode": "C9"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Community Development",
+          "order": 100,
+          "mailcode": "C12",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 100,
+              "mailcode": "C11"
+            },
+            {
+              "type": "branch",
+              "name": "Community Affairs",
+              "order": 100,
+              "mailcode": "C11"
+            },
+            {
+              "type": "branch",
+              "name": "Community Operations",
+              "order": 100,
+              "mailcode": "C12"
+            },
+            {
+              "type": "branch",
+              "name": "Finance and Procurement Services",
+              "order": 100,
+              "mailcode": "C11"
+            },
+            {
+              "type": "branch",
+              "name": "Infrastructure Development",
+              "order": 100,
+              "mailcode": "C13"
+            },
+            {
+              "type": "branch",
+              "name": "Land Development",
+              "order": 100,
+              "mailcode": "C13"
+            },
+            {
+              "type": "branch",
+              "name": "Public Libraries",
+              "order": 100,
+              "mailcode": "C23"
+            },
+            {
+              "type": "branch",
+              "name": "Sport and Recreation",
+              "order": 100,
+              "mailcode": "C10"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Protective Services",
+          "order": 100,
+          "mailcode": "C25",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 100,
+              "mailcode": "C25"
+            },
+            {
+              "type": "branch",
+              "name": "Emergency Medical Services",
+              "order": 100,
+              "mailcode": "EMS"
+            },
+            {
+              "type": "branch",
+              "name": "Fire and Life Safety",
+              "order": 100,
+              "mailcode": "C20",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Animal Welfare",
+                  "order": 100,
+                  "mailcode": "C20"
+                },
+                {
+                  "type": "unit",
+                  "name": "Building Safety",
+                  "order": 100,
+                  "mailcode": "C8"
+                },
+                {
+                  "type": "unit",
+                  "name": "Emergency Measures Organization",
+                  "order": 100,
+                  "mailcode": "C20"
+                },
+                {
+                  "type": "unit",
+                  "name": "Fire Marshals Office",
+                  "order": 100,
+                  "mailcode": "C20"
+                },
+                {
+                  "type": "unit",
+                  "name": "Safety Resources",
+                  "order": 100,
+                  "mailcode": "C19SR"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Wildland Fire Management",
+              "order": 100,
+              "mailcode": "C19",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Air Operations",
+                  "order": 100,
+                  "mailcode": "C19"
+                },
+                {
+                  "type": "unit",
+                  "name": "Finance and Administration",
+                  "order": 100,
+                  "mailcode": "C19"
+                },
+                {
+                  "type": "unit",
+                  "name": "Logistics",
+                  "order": 100,
+                  "mailcode": "C19"
+                },
+                {
+                  "type": "unit",
+                  "name": "Planning and Sciences",
+                  "order": 100,
+                  "mailcode": "C19"
+                },
+                {
+                  "type": "unit",
+                  "name": "Wildfire and Emergency Operations",
+                  "order": 100,
+                  "mailcode": "C19"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Economic Development",
+      "order": 10,
+      "mailcode": "CM9",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM9"
+        },
+        {
+          "type": "division",
+          "name": "Deputy Minister's Office",
+          "order": 20,
+          "mailcode": "F1"
+        },
+        {
+          "type": "division",
+          "name": "Corporate Services ",
+          "order": 40,
+          "mailcode": "F1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Business and Economic Research",
+              "order": 40,
+              "mailcode": "F1"
+            },
+            {
+              "type": "branch",
+              "name": "Communications and Marketing",
+              "order": 40,
+              "mailcode": "F1"
+            },
+            {
+              "type": "branch",
+              "name": "Finance and Information Management",
+              "order": 40,
+              "mailcode": "F1"
+            },
+            {
+              "type": "branch",
+              "name": "Human Resources",
+              "order": 40,
+              "mailcode": "F1"
+            },
+            {
+              "type": "branch",
+              "name": "Policy and Planning",
+              "order": 40,
+              "mailcode": "F1"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Operations ",
+          "order": 100,
+          "mailcode": "F1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Business and Industry Development",
+              "order": 100,
+              "mailcode": "F2"
+            },
+            {
+              "type": "branch",
+              "name": "Media Development",
+              "order": 100,
+              "mailcode": "F1"
+            },
+            {
+              "type": "branch",
+              "name": "Regional Economic Development",
+              "order": 100,
+              "mailcode": "F4",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Community Development",
+                  "order": 100,
+                  "mailcode": "F4"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Technology and Telecommunications Development",
+              "order": 100,
+              "mailcode": "F6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Education",
+      "order": 10,
+      "mailcode": "CM4",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM4"
+        },
+        {
+          "type": "division",
+          "name": "Deputy Minister's Office",
+          "order": 20,
+          "mailcode": "E1"
+        },
+        {
+          "type": "division",
+          "name": "Branch reports direct to EDU DM",
+          "order": 30,
+          "mailcode": "E1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Human Resource Services",
+              "order": 30,
+              "mailcode": "E1"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Corporate Services ",
+          "order": 40,
+          "mailcode": "E1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Community Relations and Engagement",
+              "order": 40,
+              "mailcode": "E1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Communications",
+                  "order": 40,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "School Councils",
+                  "order": 40,
+                  "mailcode": "E1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Finance Systems and Administration ",
+              "order": 40,
+              "mailcode": "E1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Accounting Services",
+                  "order": 40,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Budgets",
+                  "order": 40,
+                  "mailcode": "E1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Operations ",
+              "order": 40,
+              "mailcode": "E1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Custodial Program",
+                  "order": 40,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Facilities",
+                  "order": 40,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Health and Safety",
+                  "order": 40,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Student Transportation",
+                  "order": 40,
+                  "mailcode": "E1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Policy Planning and Evaluation",
+              "order": 40,
+              "mailcode": "E1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Records",
+                  "order": 40,
+                  "mailcode": "E1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Advanced Education",
+          "order": 100,
+          "mailcode": "E1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Immigration",
+              "order": 100,
+              "mailcode": "E1"
+            },
+            {
+              "type": "branch",
+              "name": "Labour Market Programs and Services",
+              "order": 100,
+              "mailcode": "E1"
+            },
+            {
+              "type": "branch",
+              "name": "Training Programs",
+              "order": 100,
+              "mailcode": "E1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Apprenticeship and Trades Qualification",
+                  "order": 100,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Student Employment",
+                  "order": 100,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Student Financial Assistance",
+                  "order": 100,
+                  "mailcode": "E1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Commission Scolaire Francophone du Yukon",
+          "order": 100,
+          "mailcode": "CSFY"
+        },
+        {
+          "type": "division",
+          "name": "Public Schools",
+          "order": 100,
+          "mailcode": "E1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Learning",
+              "order": 100,
+              "mailcode": "E1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "First Nations Programs and Partnerships",
+                  "order": 100,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "French Programs",
+                  "order": 100,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Information Technology Support Services",
+                  "order": 100,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Learning Support Services",
+                  "order": 100,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Resource Services",
+                  "order": 100,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Student Information and Technology",
+                  "order": 100,
+                  "mailcode": "E1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Schools",
+              "order": 100,
+              "mailcode": "E1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Administration",
+                  "order": 100,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Rural Schools",
+                  "order": 100,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Student Support Services",
+                  "order": 100,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Whitehorse Schools",
+                  "order": 100,
+                  "mailcode": "E1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Yukon Native Language Centre",
+                  "order": 100,
+                  "mailcode": "E1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Elections Yukon",
+      "order": 100,
+      "mailcode": "A9",
+      "children": [
+        {
+          "type": "division",
+          "name": "Elections Office",
+          "order": 100,
+          "mailcode": "A9"
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Energy Mines and Resources",
+      "order": 10,
+      "mailcode": "CM5",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM5"
+        },
+        {
+          "type": "division",
+          "name": "Deputy Minister's Office",
+          "order": 20,
+          "mailcode": "K240"
+        },
+        {
+          "type": "division",
+          "name": "Branch reports direct to EMR DM",
+          "order": 30,
+          "mailcode": "K240",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Corporate Services ",
+              "order": 30,
+              "mailcode": "K345",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Administration",
+                  "order": 30,
+                  "mailcode": "K345"
+                },
+                {
+                  "type": "unit",
+                  "name": "Financial Operations",
+                  "order": 30,
+                  "mailcode": "K345"
+                },
+                {
+                  "type": "unit",
+                  "name": "Information Systems",
+                  "order": 30,
+                  "mailcode": "K345"
+                },
+                {
+                  "type": "unit",
+                  "name": "Library",
+                  "order": 30,
+                  "mailcode": "K335"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Human Resource",
+              "order": 30,
+              "mailcode": "K230"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Client Services and Partnerships",
+          "order": 100,
+          "mailcode": null,
+          "children": [
+            {
+              "type": "branch",
+              "name": "Compliance Monitoring and Inspection",
+              "order": 100,
+              "mailcode": null,
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Operations",
+                  "order": 100,
+                  "mailcode": null
+                },
+                {
+                  "type": "unit",
+                  "name": "Program Standards, Planning and Monitoring",
+                  "order": 100,
+                  "mailcode": null
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Strategic Alliances",
+              "order": 100,
+              "mailcode": null
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Energy, Corporate Policy and Communications",
+          "order": 100,
+          "mailcode": "K235",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 100,
+              "mailcode": "K235"
+            },
+            {
+              "type": "branch",
+              "name": "Communications",
+              "order": 100,
+              "mailcode": "K235"
+            },
+            {
+              "type": "branch",
+              "name": "Corporate Policy and Planning",
+              "order": 100,
+              "mailcode": "K235"
+            },
+            {
+              "type": "branch",
+              "name": "Energy Branch",
+              "order": 100,
+              "mailcode": "K6"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Oil, Gas and Mineral Resources",
+          "order": 100,
+          "mailcode": "K13",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Assessment and Abandoned Mines",
+              "order": 100,
+              "mailcode": "K419"
+            },
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 100,
+              "mailcode": "K13"
+            },
+            {
+              "type": "branch",
+              "name": "Mineral Resources",
+              "order": 100,
+              "mailcode": "K9",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Mineral Management",
+                  "order": 100,
+                  "mailcode": "K9"
+                },
+                {
+                  "type": "unit",
+                  "name": "Mineral Planning and Development",
+                  "order": 100,
+                  "mailcode": "K9"
+                },
+                {
+                  "type": "unit",
+                  "name": "Mining Lands",
+                  "order": 100,
+                  "mailcode": "K9"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Oil and Gas Resources",
+              "order": 100,
+              "mailcode": "K11"
+            },
+            {
+              "type": "branch",
+              "name": "Yukon Geological Survey",
+              "order": 100,
+              "mailcode": "K102"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Sustainable Resources",
+          "order": 100,
+          "mailcode": "K315",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Agriculture",
+              "order": 100,
+              "mailcode": "K315"
+            },
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 100,
+              "mailcode": "K315"
+            },
+            {
+              "type": "branch",
+              "name": "Forestry",
+              "order": 100,
+              "mailcode": "K315",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Forest Management",
+                  "order": 100,
+                  "mailcode": "K315"
+                },
+                {
+                  "type": "unit",
+                  "name": "Forest Operations",
+                  "order": 100,
+                  "mailcode": "K315"
+                },
+                {
+                  "type": "unit",
+                  "name": "Forest Planning and Development",
+                  "order": 100,
+                  "mailcode": "K315"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Land Management",
+              "order": 100,
+              "mailcode": "K315",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Land Client Services",
+                  "order": 100,
+                  "mailcode": "K320"
+                },
+                {
+                  "type": "unit",
+                  "name": "Land Use",
+                  "order": 100,
+                  "mailcode": "K320"
+                },
+                {
+                  "type": "unit",
+                  "name": "Program Support",
+                  "order": 100,
+                  "mailcode": "K320"
+                },
+                {
+                  "type": "unit",
+                  "name": "Rural Land Development",
+                  "order": 100,
+                  "mailcode": "K320"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Land Planning",
+              "order": 100,
+              "mailcode": "K320LP"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Environment",
+      "order": 10,
+      "mailcode": "CM7",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM7"
+        },
+        {
+          "type": "division",
+          "name": "Deputy Minister's Office",
+          "order": 20,
+          "mailcode": "V1"
+        },
+        {
+          "type": "division",
+          "name": "Branch or Unit reports direct to ENV DM",
+          "order": 30,
+          "mailcode": "V1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Animal Health Unit",
+              "order": 30,
+              "mailcode": "V7"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Corporate Services and Climate Change",
+          "order": 40,
+          "mailcode": "V1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 40,
+              "mailcode": "V1"
+            },
+            {
+              "type": "branch",
+              "name": "Climate Change Secretariat",
+              "order": 40,
+              "mailcode": "V205"
+            },
+            {
+              "type": "branch",
+              "name": "Communications",
+              "order": 40,
+              "mailcode": "V2"
+            },
+            {
+              "type": "branch",
+              "name": "Finance and Client Services",
+              "order": 40,
+              "mailcode": "V3A",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Client Services",
+                  "order": 40,
+                  "mailcode": "V3A"
+                },
+                {
+                  "type": "unit",
+                  "name": "Financial Services",
+                  "order": 40,
+                  "mailcode": "V3A"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Human Resources",
+              "order": 40,
+              "mailcode": "VHR"
+            },
+            {
+              "type": "branch",
+              "name": "Information Management and Technology",
+              "order": 40,
+              "mailcode": "V3B"
+            },
+            {
+              "type": "branch",
+              "name": "Policy Planning and Aboriginal Relations",
+              "order": 40,
+              "mailcode": "V2",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Corporate Planning and IFA Secretariat",
+                  "order": 40,
+                  "mailcode": "V2"
+                },
+                {
+                  "type": "unit",
+                  "name": "Policy and Land Claims",
+                  "order": 40,
+                  "mailcode": "V2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Environmental Sustainability",
+          "order": 100,
+          "mailcode": "V8",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 100,
+              "mailcode": "V8"
+            },
+            {
+              "type": "branch",
+              "name": "Conservation Officer Services",
+              "order": 100,
+              "mailcode": "V18",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Enforcement and Compliance",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Environmental Education and Youth Programs",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Field Operations North",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Field Operations North - Carmacks District",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Field Operations North - Dawson District",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Field Operations North - Faro District",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Field Operations North - Mayo District",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Field Operations North - Old Crow District",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Field Operations North - Ross River District",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Field Operations South",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Field Operations South - Haines Junction District",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Field Operations South - Teslin District",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Field Operations South - Watson Lake District",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Field Operations South - Whitehorse District",
+                  "order": 100,
+                  "mailcode": "V18"
+                },
+                {
+                  "type": "unit",
+                  "name": "Fur Industry Development and Support",
+                  "order": 100,
+                  "mailcode": "V18"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Environmental Programs",
+              "order": 100,
+              "mailcode": "V8",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Environmental Affairs",
+                  "order": 100,
+                  "mailcode": "V8"
+                },
+                {
+                  "type": "unit",
+                  "name": "Environmental Compliance and Inspections",
+                  "order": 100,
+                  "mailcode": "V8"
+                },
+                {
+                  "type": "unit",
+                  "name": "Site Assessment and Remediation Unit",
+                  "order": 100,
+                  "mailcode": "V8"
+                },
+                {
+                  "type": "unit",
+                  "name": "Standards and Approvals",
+                  "order": 100,
+                  "mailcode": "V8"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Fish and Wildlife",
+              "order": 100,
+              "mailcode": "V5",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Biodiversity Programs",
+                  "order": 100,
+                  "mailcode": "V5N"
+                },
+                {
+                  "type": "unit",
+                  "name": "Habitat Programs",
+                  "order": 100,
+                  "mailcode": "V5R"
+                },
+                {
+                  "type": "unit",
+                  "name": "Regional Programs",
+                  "order": 100,
+                  "mailcode": "V5R"
+                },
+                {
+                  "type": "unit",
+                  "name": "Regional Programs - Kluane",
+                  "order": 100,
+                  "mailcode": "V5R"
+                },
+                {
+                  "type": "unit",
+                  "name": "Regional Programs - Liard",
+                  "order": 100,
+                  "mailcode": "V5R"
+                },
+                {
+                  "type": "unit",
+                  "name": "Regional Programs - North Yukon",
+                  "order": 100,
+                  "mailcode": "V5A"
+                },
+                {
+                  "type": "unit",
+                  "name": "Regional Programs - Northern Tutchone",
+                  "order": 100,
+                  "mailcode": "V5R"
+                },
+                {
+                  "type": "unit",
+                  "name": "Regional Programs - Southern Lakes",
+                  "order": 100,
+                  "mailcode": "V5R"
+                },
+                {
+                  "type": "unit",
+                  "name": "Species Programs",
+                  "order": 100,
+                  "mailcode": "V5A"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Water Resources",
+              "order": 100,
+              "mailcode": "V310",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Hydrology",
+                  "order": 100,
+                  "mailcode": "V310"
+                },
+                {
+                  "type": "unit",
+                  "name": "Water Inspections",
+                  "order": 100,
+                  "mailcode": "V310"
+                },
+                {
+                  "type": "unit",
+                  "name": "Water Quality",
+                  "order": 100,
+                  "mailcode": "V310"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Yukon Parks",
+              "order": 100,
+              "mailcode": "V4",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Park Officers",
+                  "order": 100,
+                  "mailcode": "V4"
+                },
+                {
+                  "type": "unit",
+                  "name": "Park Planning",
+                  "order": 100,
+                  "mailcode": "V4"
+                },
+                {
+                  "type": "unit",
+                  "name": "Regional Operations - North Yukon",
+                  "order": 100,
+                  "mailcode": "V4"
+                },
+                {
+                  "type": "unit",
+                  "name": "Regional Operations - South Yukon",
+                  "order": 100,
+                  "mailcode": "V4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Executive Council Office",
+      "order": 10,
+      "mailcode": "CM1",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM1"
+        },
+        {
+          "type": "division",
+          "name": "Deputy Minister's Office",
+          "order": 20,
+          "mailcode": "A8"
+        },
+        {
+          "type": "division",
+          "name": "Branch reports direct to ECO DM",
+          "order": 30,
+          "mailcode": "A8",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Government Internal Audit Services",
+              "order": 30,
+              "mailcode": "A8"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Corporate Programs and Intergovernmental Relations",
+          "order": 40,
+          "mailcode": "A8",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Intergovernmental Relations",
+              "order": 40,
+              "mailcode": "A8",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Office of the Science Advisor",
+                  "order": 40,
+                  "mailcode": "A8"
+                },
+                {
+                  "type": "unit",
+                  "name": "Youth Directorate",
+                  "order": 40,
+                  "mailcode": "A8Y"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Major Projects Yukon",
+              "order": 40,
+              "mailcode": null
+            },
+            {
+              "type": "branch",
+              "name": "Yukon Water Board Secretariat",
+              "order": 40,
+              "mailcode": null
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Aboriginal Relations",
+          "order": 100,
+          "mailcode": "A14",
+          "children": [
+            {
+              "type": "branch",
+              "name": "First Nation Relations",
+              "order": 100,
+              "mailcode": "A14"
+            },
+            {
+              "type": "branch",
+              "name": "Implementation and Reconciliation",
+              "order": 100,
+              "mailcode": "A14"
+            },
+            {
+              "type": "branch",
+              "name": "Policy and Consultation",
+              "order": 100,
+              "mailcode": "A14"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Strategic Corporate Services",
+          "order": 100,
+          "mailcode": "A8",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Communications",
+              "order": 100,
+              "mailcode": "A8"
+            },
+            {
+              "type": "branch",
+              "name": "Finance and Administration",
+              "order": 100,
+              "mailcode": "A8"
+            },
+            {
+              "type": "branch",
+              "name": "Human Resources",
+              "order": 100,
+              "mailcode": "A8"
+            },
+            {
+              "type": "branch",
+              "name": "Policy and Planning",
+              "order": 100,
+              "mailcode": "A8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Finance",
+      "order": 10,
+      "mailcode": "CM1",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM1"
+        },
+        {
+          "type": "division",
+          "name": "Deputy Minister's Office",
+          "order": 20,
+          "mailcode": "B1"
+        },
+        {
+          "type": "division",
+          "name": "Branch reports direct to FIN DM",
+          "order": 30,
+          "mailcode": "B1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Corporate Services ",
+              "order": 30,
+              "mailcode": "B1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Communications",
+                  "order": 30,
+                  "mailcode": "B1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Finance and Administration",
+                  "order": 30,
+                  "mailcode": "B1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Human Resources",
+                  "order": 30,
+                  "mailcode": "B1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Office of the Comptroller",
+              "order": 30,
+              "mailcode": "B1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Financial Accounting",
+                  "order": 30,
+                  "mailcode": "B1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Policy and Compliance",
+                  "order": 30,
+                  "mailcode": "B1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Economics, Fiscal Policy and Statistics",
+          "order": 100,
+          "mailcode": "B2",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Economic Research",
+              "order": 100,
+              "mailcode": "B2"
+            },
+            {
+              "type": "branch",
+              "name": "Fiscal Relations",
+              "order": 100,
+              "mailcode": "B1"
+            },
+            {
+              "type": "branch",
+              "name": "Program Management",
+              "order": 100,
+              "mailcode": "B2"
+            },
+            {
+              "type": "branch",
+              "name": "Yukon Bureau of Statistics",
+              "order": 100,
+              "mailcode": "B2"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Financial Operations and Revenue Services",
+          "order": 100,
+          "mailcode": "B1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Banking Investments and Debt Services",
+              "order": 100,
+              "mailcode": "B1"
+            },
+            {
+              "type": "branch",
+              "name": "Financial Management Information Systems",
+              "order": 100,
+              "mailcode": "B1"
+            },
+            {
+              "type": "branch",
+              "name": "Financial Operations ",
+              "order": 100,
+              "mailcode": "B1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Accounts Payable",
+                  "order": 100,
+                  "mailcode": "B1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Accounts Receivable",
+                  "order": 100,
+                  "mailcode": "B1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Payroll",
+                  "order": 100,
+                  "mailcode": "B1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Program Management",
+              "order": 100,
+              "mailcode": "B1"
+            },
+            {
+              "type": "branch",
+              "name": "Tax Administration",
+              "order": 100,
+              "mailcode": "B1"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Management Board Secretariat",
+          "order": 100,
+          "mailcode": "B1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Budgets",
+              "order": 100,
+              "mailcode": "B1"
+            },
+            {
+              "type": "branch",
+              "name": "Management Board Analysis",
+              "order": 100,
+              "mailcode": "B1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "French Language Services Directorate",
+      "order": 10,
+      "mailcode": "CM2",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM2"
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Health and Social Services",
+      "order": 10,
+      "mailcode": "CM8",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM8"
+        },
+        {
+          "type": "division",
+          "name": "Deputy Minister's Office",
+          "order": 20,
+          "mailcode": "H1"
+        },
+        {
+          "type": "division",
+          "name": "Branch reports direct to HSS DM",
+          "order": 30,
+          "mailcode": "H1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Communications",
+              "order": 30,
+              "mailcode": "H1"
+            },
+            {
+              "type": "branch",
+              "name": "Human Resources",
+              "order": 30,
+              "mailcode": "H1H"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Corporate Services ",
+          "order": 40,
+          "mailcode": "H1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Corporate Planning and Risk Management",
+              "order": 40,
+              "mailcode": "H1"
+            },
+            {
+              "type": "branch",
+              "name": "Finance Systems and Administration ",
+              "order": 40,
+              "mailcode": "H1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Cost Recovery",
+                  "order": 40,
+                  "mailcode": "H1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Facilities and Capital Planning",
+                  "order": 40,
+                  "mailcode": "H1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Financial Operations",
+                  "order": 40,
+                  "mailcode": "H1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Information Services Branch",
+              "order": 40,
+              "mailcode": null,
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Information and Records",
+                  "order": 40,
+                  "mailcode": null
+                },
+                {
+                  "type": "unit",
+                  "name": "Information Systems",
+                  "order": 40,
+                  "mailcode": null
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Policy and Program Development",
+              "order": 40,
+              "mailcode": "H1"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Continuing Care",
+          "order": 100,
+          "mailcode": "H109",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Care and Community",
+              "order": 100,
+              "mailcode": "H1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Birch Lodge",
+                  "order": 100,
+                  "mailcode": "H1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Dawson Community Care",
+                  "order": 100,
+                  "mailcode": "H1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Intermediate and Extended Care",
+                  "order": 100,
+                  "mailcode": "H1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Yukon Home Care Program",
+                  "order": 100,
+                  "mailcode": "H1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Clinical Psychology",
+              "order": 100,
+              "mailcode": "H1"
+            },
+            {
+              "type": "branch",
+              "name": "Extended Care Services",
+              "order": 100,
+              "mailcode": "H1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Extended Care",
+                  "order": 100,
+                  "mailcode": "H1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Intermediate Care Services",
+                  "order": 100,
+                  "mailcode": "H1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Seniors Complex Care",
+                  "order": 100,
+                  "mailcode": "H1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Special Care Unit",
+                  "order": 100,
+                  "mailcode": "H1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Support Services",
+                  "order": 100,
+                  "mailcode": "H1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Therapeutic Services",
+                  "order": 100,
+                  "mailcode": "H1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Safety and Clinical Excellence",
+              "order": 100,
+              "mailcode": "H1"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Health Services",
+          "order": 100,
+          "mailcode": "H2",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Community Health Programs",
+              "order": 100,
+              "mailcode": "HP305",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Environmental Health Services",
+                  "order": 100,
+                  "mailcode": "2HospRd             "
+                },
+                {
+                  "type": "unit",
+                  "name": "Health Promotion",
+                  "order": 100,
+                  "mailcode": "HP305"
+                },
+                {
+                  "type": "unit",
+                  "name": "Mental Health Services",
+                  "order": 100,
+                  "mailcode": "4HospRd"
+                },
+                {
+                  "type": "unit",
+                  "name": "Panorama",
+                  "order": 100,
+                  "mailcode": "H2"
+                },
+                {
+                  "type": "unit",
+                  "name": "Yukon Children's Dental Program",
+                  "order": 100,
+                  "mailcode": "H2"
+                },
+                {
+                  "type": "unit",
+                  "name": "Yukon Communicable Disease Control",
+                  "order": 100,
+                  "mailcode": "4HospRd"
+                },
+                {
+                  "type": "unit",
+                  "name": "Yukon Immunization Program",
+                  "order": 100,
+                  "mailcode": "4HospRd"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Community Nursing",
+              "order": 100,
+              "mailcode": "2HospRd             ",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Chronic Conditions Support Program",
+                  "order": 100,
+                  "mailcode": "2HospRd             "
+                },
+                {
+                  "type": "unit",
+                  "name": "Clinical Practice and Programs",
+                  "order": 100,
+                  "mailcode": "2HospRd             "
+                },
+                {
+                  "type": "unit",
+                  "name": "Community Nursing Area 1",
+                  "order": 100,
+                  "mailcode": "2HospRd             "
+                },
+                {
+                  "type": "unit",
+                  "name": "Community Nursing Area 2",
+                  "order": 100,
+                  "mailcode": "2HospRd             "
+                },
+                {
+                  "type": "unit",
+                  "name": "Community Nursing Area 3",
+                  "order": 100,
+                  "mailcode": "2HospRd             "
+                },
+                {
+                  "type": "unit",
+                  "name": "Support Services",
+                  "order": 100,
+                  "mailcode": "2HospRd             "
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Health System Improvement and Transformation",
+              "order": 100,
+              "mailcode": "H2",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Chronic Disease Management",
+                  "order": 100,
+                  "mailcode": "2HospRd             "
+                },
+                {
+                  "type": "unit",
+                  "name": "Mental Wellness",
+                  "order": 100,
+                  "mailcode": "H2"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Insured Health and Hearing Services",
+              "order": 100,
+              "mailcode": "H2",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Extended Benefits and Pharmaceutical Programs",
+                  "order": 100,
+                  "mailcode": "H2"
+                },
+                {
+                  "type": "unit",
+                  "name": "Health Informatics",
+                  "order": 100,
+                  "mailcode": "H2"
+                },
+                {
+                  "type": "unit",
+                  "name": "Hearing Services",
+                  "order": 100,
+                  "mailcode": "H2"
+                },
+                {
+                  "type": "unit",
+                  "name": "Registration, Physician and Hospital Claims, Medical Travel",
+                  "order": 100,
+                  "mailcode": "H2"
+                },
+                {
+                  "type": "unit",
+                  "name": "Vital Statistics",
+                  "order": 100,
+                  "mailcode": "H2"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Medical Health Officer",
+              "order": 100,
+              "mailcode": "4HospRd"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Social Services",
+          "order": 100,
+          "mailcode": "H4",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Community and Program Support",
+              "order": 100,
+              "mailcode": "H20",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Policy and Program Support",
+                  "order": 100,
+                  "mailcode": "H20"
+                },
+                {
+                  "type": "unit",
+                  "name": "Seniors Services and Adult Protection",
+                  "order": 100,
+                  "mailcode": "H20"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Family and Children's Services",
+              "order": 100,
+              "mailcode": "H10",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Administration",
+                  "order": 100,
+                  "mailcode": "H10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Child Care Services",
+                  "order": 100,
+                  "mailcode": "H10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Child Placement Services",
+                  "order": 100,
+                  "mailcode": "H10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Early Childhood Prevention and Support",
+                  "order": 100,
+                  "mailcode": "H10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Family Services",
+                  "order": 100,
+                  "mailcode": "H10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Residential Supports",
+                  "order": 100,
+                  "mailcode": "H10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Youth Justice",
+                  "order": 100,
+                  "mailcode": "H10"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Integrated Supports for Yukon Youth",
+              "order": 100,
+              "mailcode": "H20"
+            },
+            {
+              "type": "branch",
+              "name": "Mental Wellness and Substance Use Services",
+              "order": 100,
+              "mailcode": null
+            },
+            {
+              "type": "branch",
+              "name": "Regional Services",
+              "order": 100,
+              "mailcode": "H1"
+            },
+            {
+              "type": "branch",
+              "name": "Social Supports",
+              "order": 100,
+              "mailcode": "H9A",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Alcohol and Drug Service",
+                  "order": 100,
+                  "mailcode": "H7"
+                },
+                {
+                  "type": "unit",
+                  "name": "Family Supports for Children with Disabilities",
+                  "order": 100,
+                  "mailcode": "H11B"
+                },
+                {
+                  "type": "unit",
+                  "name": "Financial Supports",
+                  "order": 100,
+                  "mailcode": "H13"
+                },
+                {
+                  "type": "unit",
+                  "name": "Services to Persons with Disabilities",
+                  "order": 100,
+                  "mailcode": "H11B"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Highways and Public Works",
+      "order": 10,
+      "mailcode": "CM5",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM5"
+        },
+        {
+          "type": "division",
+          "name": "Deputy Minister's Office",
+          "order": 20,
+          "mailcode": "W1"
+        },
+        {
+          "type": "division",
+          "name": "Branch reports direct to HPW DM",
+          "order": 30,
+          "mailcode": "W1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Human Resources",
+              "order": 30,
+              "mailcode": "W2"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Corporate Services ",
+          "order": 40,
+          "mailcode": "W3A",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 40,
+              "mailcode": "W3A"
+            },
+            {
+              "type": "branch",
+              "name": "Finance",
+              "order": 40,
+              "mailcode": "W3A"
+            },
+            {
+              "type": "branch",
+              "name": "Policy and Communications",
+              "order": 40,
+              "mailcode": "W3A"
+            },
+            {
+              "type": "branch",
+              "name": "Procurement Support Centre",
+              "order": 40,
+              "mailcode": "W3A"
+            },
+            {
+              "type": "branch",
+              "name": "Supply Services",
+              "order": 40,
+              "mailcode": "W3A",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Acquisition Services and Planning",
+                  "order": 40,
+                  "mailcode": "W4"
+                },
+                {
+                  "type": "unit",
+                  "name": "Finance and Administrative Services",
+                  "order": 40,
+                  "mailcode": "W3A"
+                },
+                {
+                  "type": "unit",
+                  "name": "Fleet Vehicle Agency",
+                  "order": 40,
+                  "mailcode": "W3A"
+                },
+                {
+                  "type": "unit",
+                  "name": "Mail and Logistics Services",
+                  "order": 40,
+                  "mailcode": "W3A"
+                },
+                {
+                  "type": "unit",
+                  "name": "Queens Printer",
+                  "order": 40,
+                  "mailcode": "W9"
+                },
+                {
+                  "type": "unit",
+                  "name": "Stores and Assets",
+                  "order": 40,
+                  "mailcode": "W4"
+                },
+                {
+                  "type": "unit",
+                  "name": "Travel Services",
+                  "order": 40,
+                  "mailcode": "W4"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Information and Communications Technology",
+          "order": 100,
+          "mailcode": "W10",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Corporate Information Management",
+              "order": 100,
+              "mailcode": "W10"
+            },
+            {
+              "type": "branch",
+              "name": "Electronic Services",
+              "order": 100,
+              "mailcode": "W19",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Geomatics Yukon",
+                  "order": 100,
+                  "mailcode": "W19"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Information Management",
+              "order": 100,
+              "mailcode": "W3I"
+            },
+            {
+              "type": "branch",
+              "name": "Office of the CIO",
+              "order": 100,
+              "mailcode": "W10"
+            },
+            {
+              "type": "branch",
+              "name": "Planning and Administration",
+              "order": 100,
+              "mailcode": "W10"
+            },
+            {
+              "type": "branch",
+              "name": "Records Program Improvement Initiative",
+              "order": 100,
+              "mailcode": "W10"
+            },
+            {
+              "type": "branch",
+              "name": "Service Innovation and Support",
+              "order": 100,
+              "mailcode": "W10"
+            },
+            {
+              "type": "branch",
+              "name": "Technology Infrastructure and Operations",
+              "order": 100,
+              "mailcode": "W10",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Data and Application Support",
+                  "order": 100,
+                  "mailcode": "W10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Shared Technology Services",
+                  "order": 100,
+                  "mailcode": "W10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Technology Infrastructure",
+                  "order": 100,
+                  "mailcode": "W10"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Property Management",
+          "order": 100,
+          "mailcode": "W5",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 100,
+              "mailcode": "W5"
+            },
+            {
+              "type": "branch",
+              "name": "Capital Development",
+              "order": 100,
+              "mailcode": "W5"
+            },
+            {
+              "type": "branch",
+              "name": "Facilities Management and Regional Services",
+              "order": 100,
+              "mailcode": "W5",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Central Region",
+                  "order": 100,
+                  "mailcode": "W5"
+                },
+                {
+                  "type": "unit",
+                  "name": "Eastern Region",
+                  "order": 100,
+                  "mailcode": "W5"
+                },
+                {
+                  "type": "unit",
+                  "name": "Northern Region",
+                  "order": 100,
+                  "mailcode": "W5"
+                },
+                {
+                  "type": "unit",
+                  "name": "Western Region",
+                  "order": 100,
+                  "mailcode": "W5"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Finance and Administration",
+              "order": 100,
+              "mailcode": "W5"
+            },
+            {
+              "type": "branch",
+              "name": "Realty and Capital Asset Planning",
+              "order": 100,
+              "mailcode": "W5"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Transportation",
+          "order": 100,
+          "mailcode": "W1A",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 100,
+              "mailcode": "W1A"
+            },
+            {
+              "type": "branch",
+              "name": "Aviation",
+              "order": 100,
+              "mailcode": "W14",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Administration",
+                  "order": 100,
+                  "mailcode": "W14"
+                },
+                {
+                  "type": "unit",
+                  "name": "Aerodrome and Airports",
+                  "order": 100,
+                  "mailcode": "W14"
+                },
+                {
+                  "type": "unit",
+                  "name": "Maintenance",
+                  "order": 100,
+                  "mailcode": "W14"
+                },
+                {
+                  "type": "unit",
+                  "name": "Safety and Security",
+                  "order": 100,
+                  "mailcode": "W14"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Finance and Administration",
+              "order": 100,
+              "mailcode": "W14"
+            },
+            {
+              "type": "branch",
+              "name": "Transport Services",
+              "order": 100,
+              "mailcode": "W17",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Carrier Compliance Section",
+                  "order": 100,
+                  "mailcode": "W17"
+                },
+                {
+                  "type": "unit",
+                  "name": "Finance and Administration",
+                  "order": 100,
+                  "mailcode": "W17"
+                },
+                {
+                  "type": "unit",
+                  "name": "Motor Vehicles",
+                  "order": 100,
+                  "mailcode": "W17"
+                },
+                {
+                  "type": "unit",
+                  "name": "National Safety Code",
+                  "order": 100,
+                  "mailcode": "W17"
+                },
+                {
+                  "type": "unit",
+                  "name": "Road Safety",
+                  "order": 100,
+                  "mailcode": "W17"
+                },
+                {
+                  "type": "unit",
+                  "name": "Yukon Driver Control Board",
+                  "order": 100,
+                  "mailcode": "W17"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Transportation Engineering",
+              "order": 100,
+              "mailcode": "W13",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Bridges",
+                  "order": 100,
+                  "mailcode": "W13"
+                },
+                {
+                  "type": "unit",
+                  "name": "Design and Construction",
+                  "order": 100,
+                  "mailcode": "W13"
+                },
+                {
+                  "type": "unit",
+                  "name": "Environmental Affairs",
+                  "order": 100,
+                  "mailcode": "W13"
+                },
+                {
+                  "type": "unit",
+                  "name": "Finance",
+                  "order": 100,
+                  "mailcode": "W13"
+                },
+                {
+                  "type": "unit",
+                  "name": "Geotechnical and Materials",
+                  "order": 100,
+                  "mailcode": "W13"
+                },
+                {
+                  "type": "unit",
+                  "name": "Major Programs",
+                  "order": 100,
+                  "mailcode": "W13 "
+                },
+                {
+                  "type": "unit",
+                  "name": "Planning and Programming",
+                  "order": 100,
+                  "mailcode": "W13"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Transportation Maintenance",
+              "order": 100,
+              "mailcode": "W12",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Eastern Area",
+                  "order": 100,
+                  "mailcode": "W12"
+                },
+                {
+                  "type": "unit",
+                  "name": "Finance and Administration",
+                  "order": 100,
+                  "mailcode": "W12"
+                },
+                {
+                  "type": "unit",
+                  "name": "Maintenance and Planning",
+                  "order": 100,
+                  "mailcode": "W12"
+                },
+                {
+                  "type": "unit",
+                  "name": "Mechanical Operations",
+                  "order": 100,
+                  "mailcode": "W12"
+                },
+                {
+                  "type": "unit",
+                  "name": "Northern Area",
+                  "order": 100,
+                  "mailcode": "W12"
+                },
+                {
+                  "type": "unit",
+                  "name": "Safety and Operations",
+                  "order": 100,
+                  "mailcode": "W12"
+                },
+                {
+                  "type": "unit",
+                  "name": "Safety and Training",
+                  "order": 100,
+                  "mailcode": "W12"
+                },
+                {
+                  "type": "unit",
+                  "name": "Western Area",
+                  "order": 100,
+                  "mailcode": "W12"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Transportation Planning",
+              "order": 100,
+              "mailcode": null,
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Business Modernization Initiative",
+                  "order": 100,
+                  "mailcode": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Justice",
+      "order": 10,
+      "mailcode": "CM3",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM3"
+        },
+        {
+          "type": "division",
+          "name": "Deputy Minister's Office",
+          "order": 20,
+          "mailcode": "J1"
+        },
+        {
+          "type": "division",
+          "name": "Branch reports direct to JUS DM",
+          "order": 30,
+          "mailcode": "J1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Finance Systems Administration and Records",
+              "order": 30,
+              "mailcode": "J1B",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Administration and Records",
+                  "order": 30,
+                  "mailcode": "J1B"
+                },
+                {
+                  "type": "unit",
+                  "name": "Finance",
+                  "order": 30,
+                  "mailcode": "J1B"
+                },
+                {
+                  "type": "unit",
+                  "name": "Systems",
+                  "order": 30,
+                  "mailcode": "J1B"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Human Resources",
+              "order": 30,
+              "mailcode": "J1H"
+            },
+            {
+              "type": "branch",
+              "name": "Policy and Communications",
+              "order": 30,
+              "mailcode": "J1A"
+            },
+            {
+              "type": "branch",
+              "name": "Sharing Common Ground Implementation",
+              "order": 30,
+              "mailcode": "J1H"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Community Justice and Public Safety",
+          "order": 100,
+          "mailcode": "J10",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 100,
+              "mailcode": "J10"
+            },
+            {
+              "type": "branch",
+              "name": "Corrections",
+              "order": 100,
+              "mailcode": "J10",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Addictions Counselling",
+                  "order": 100,
+                  "mailcode": "J10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Community and Correctional Services",
+                  "order": 100,
+                  "mailcode": "J10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Dawson City Offender Supervision and Services",
+                  "order": 100,
+                  "mailcode": "J10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Family Violence Prevention",
+                  "order": 100,
+                  "mailcode": "J10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Justice Wellness Centre",
+                  "order": 100,
+                  "mailcode": "J10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Offender Supervision and Services",
+                  "order": 100,
+                  "mailcode": "J10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Sex Offender Risk Management",
+                  "order": 100,
+                  "mailcode": "J10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Watson Lake Offender Supervision and Services",
+                  "order": 100,
+                  "mailcode": "J10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Whitehorse Corrections Centre",
+                  "order": 100,
+                  "mailcode": "J10"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Planning and Special Projects",
+              "order": 100,
+              "mailcode": "J10"
+            },
+            {
+              "type": "branch",
+              "name": "Public Safety and Investigations",
+              "order": 100,
+              "mailcode": "J10",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Crime Prevention",
+                  "order": 100,
+                  "mailcode": "J10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Investigation Standards",
+                  "order": 100,
+                  "mailcode": "J10"
+                },
+                {
+                  "type": "unit",
+                  "name": "Safer Communities and Neighbourhoods",
+                  "order": 100,
+                  "mailcode": "J10"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Victim Services",
+              "order": 100,
+              "mailcode": "J10"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Court and Regulatory Services",
+          "order": 100,
+          "mailcode": "J3",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 100,
+              "mailcode": "J3"
+            },
+            {
+              "type": "branch",
+              "name": "Court Services",
+              "order": 100,
+              "mailcode": "J3",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Court Administration",
+                  "order": 100,
+                  "mailcode": "J3"
+                },
+                {
+                  "type": "unit",
+                  "name": "Court Operations",
+                  "order": 100,
+                  "mailcode": "J3"
+                },
+                {
+                  "type": "unit",
+                  "name": "Sheriffs Services",
+                  "order": 100,
+                  "mailcode": "J3D"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Family Services",
+              "order": 100,
+              "mailcode": "J3",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Family Law Information Centre",
+                  "order": 100,
+                  "mailcode": "J3"
+                },
+                {
+                  "type": "unit",
+                  "name": "Maintenance Enforcement",
+                  "order": 100,
+                  "mailcode": "J3"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Land Titles Office",
+              "order": 100,
+              "mailcode": "J2A"
+            },
+            {
+              "type": "branch",
+              "name": "Office of the Public Guardian and Trustee",
+              "order": 100,
+              "mailcode": "J2B"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Legal Services",
+          "order": 100,
+          "mailcode": "J2",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Aboriginal Law",
+              "order": 100,
+              "mailcode": "J2E"
+            },
+            {
+              "type": "branch",
+              "name": "Assistant Deputy Minister's Office",
+              "order": 100,
+              "mailcode": "J2"
+            },
+            {
+              "type": "branch",
+              "name": "Coroners Services",
+              "order": 100,
+              "mailcode": "J10A"
+            },
+            {
+              "type": "branch",
+              "name": "Legislative Counsel",
+              "order": 100,
+              "mailcode": "J2"
+            },
+            {
+              "type": "branch",
+              "name": "Litigation",
+              "order": 100,
+              "mailcode": "J2"
+            },
+            {
+              "type": "branch",
+              "name": "Natural Resources and Environmental Law",
+              "order": 100,
+              "mailcode": "J2E"
+            },
+            {
+              "type": "branch",
+              "name": "Solicitors",
+              "order": 100,
+              "mailcode": "J2"
+            },
+            {
+              "type": "branch",
+              "name": "Workers Advocate Office",
+              "order": 100,
+              "mailcode": "J2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Legislative Assembly Office",
+      "order": 100,
+      "mailcode": "A9",
+      "children": [
+        {
+          "type": "division",
+          "name": "Legislative Assembly Office Staff",
+          "order": 100,
+          "mailcode": "A9"
+        },
+        {
+          "type": "division",
+          "name": "Liberal Party Private Member Caucus",
+          "order": 100,
+          "mailcode": "A11"
+        },
+        {
+          "type": "division",
+          "name": "New Democrat Party Caucus",
+          "order": 100,
+          "mailcode": "A15"
+        },
+        {
+          "type": "division",
+          "name": "Yukon Party Caucus",
+          "order": 100,
+          "mailcode": "A10"
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Ombudsman / Information and Privacy Commissioner",
+      "order": 100,
+      "mailcode": "O1"
+    },
+    {
+      "type": "department",
+      "name": "Public Service Commission",
+      "order": 10,
+      "mailcode": "CM6",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM6"
+        },
+        {
+          "type": "division",
+          "name": "Branch reports direct to PSC Commissioner",
+          "order": 100,
+          "mailcode": "Z1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Communications",
+              "order": 100,
+              "mailcode": null
+            },
+            {
+              "type": "branch",
+              "name": "Corporate Human Resources and Diversity Services",
+              "order": 100,
+              "mailcode": "Z1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Aboriginal Workforce Services",
+                  "order": 100,
+                  "mailcode": "Z1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Workplace Diversity Employment Office",
+                  "order": 100,
+                  "mailcode": "Z1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Finance and Administration",
+              "order": 100,
+              "mailcode": "Z1"
+            },
+            {
+              "type": "branch",
+              "name": "Health, Safety and Disability Management",
+              "order": 100,
+              "mailcode": "Z3",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Employee Assistance Program",
+                  "order": 100,
+                  "mailcode": "Z3"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Labour Relations",
+              "order": 100,
+              "mailcode": "Z1"
+            },
+            {
+              "type": "branch",
+              "name": "Organizational Development",
+              "order": 100,
+              "mailcode": "Z1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "French Language Training Centre",
+                  "order": 100,
+                  "mailcode": "Z1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Policy and Planning Branch",
+              "order": 100,
+              "mailcode": "Z1"
+            },
+            {
+              "type": "branch",
+              "name": "Respectful Workplace Office",
+              "order": 100,
+              "mailcode": "Z1211"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "HR Service Centre",
+          "order": 100,
+          "mailcode": "Z1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Compensation and Classification",
+              "order": 100,
+              "mailcode": "Z1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Classification",
+                  "order": 100,
+                  "mailcode": "Z1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Compensation",
+                  "order": 100,
+                  "mailcode": "Z1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "HR Centralized Services",
+              "order": 100,
+              "mailcode": "Z1"
+            },
+            {
+              "type": "branch",
+              "name": "Human Resource Management Systems",
+              "order": 100,
+              "mailcode": "Z1"
+            },
+            {
+              "type": "branch",
+              "name": "TLL Project Office",
+              "order": 100,
+              "mailcode": "Z1ODB"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Public Service Commissioners Office",
+          "order": 100,
+          "mailcode": "Z1"
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Tourism and Culture",
+      "order": 10,
+      "mailcode": "CM2",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM2"
+        },
+        {
+          "type": "division",
+          "name": "Deputy Minister's Office",
+          "order": 20,
+          "mailcode": "L1"
+        },
+        {
+          "type": "division",
+          "name": "Branch reports direct to TOU DM",
+          "order": 30,
+          "mailcode": "L1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Corporate Services ",
+              "order": 30,
+              "mailcode": "L1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Finance",
+                  "order": 30,
+                  "mailcode": "L1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Human Resources",
+                  "order": 30,
+                  "mailcode": "L1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Records Management",
+                  "order": 30,
+                  "mailcode": "L1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Systems Administration",
+                  "order": 30,
+                  "mailcode": "L1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Cultural Services",
+              "order": 30,
+              "mailcode": "L1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Arts",
+                  "order": 30,
+                  "mailcode": "L3"
+                },
+                {
+                  "type": "unit",
+                  "name": "Heritage Resources",
+                  "order": 30,
+                  "mailcode": "L1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Historic Sites",
+                  "order": 30,
+                  "mailcode": "L2"
+                },
+                {
+                  "type": "unit",
+                  "name": "Museums",
+                  "order": 30,
+                  "mailcode": "L2A"
+                },
+                {
+                  "type": "unit",
+                  "name": "Yukon Archives",
+                  "order": 30,
+                  "mailcode": "L6"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Policy and Communications ",
+              "order": 30,
+              "mailcode": "L1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Communications",
+                  "order": 30,
+                  "mailcode": "L1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Policy",
+                  "order": 30,
+                  "mailcode": "L1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Tourism",
+              "order": 30,
+              "mailcode": "L1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Industry Services",
+                  "order": 30,
+                  "mailcode": "L1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Marketing",
+                  "order": 30,
+                  "mailcode": "L1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Visitor Services",
+                  "order": 30,
+                  "mailcode": "L1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Women's Directorate",
+      "order": 10,
+      "mailcode": null,
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": null
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Yukon Development Corporation",
+      "order": 100,
+      "mailcode": "D1"
+    },
+    {
+      "type": "department",
+      "name": "Yukon Environmental and Socioeconomic Assessment Board",
+      "order": 100,
+      "mailcode": null
+    },
+    {
+      "type": "department",
+      "name": "Yukon Hospital Corporation",
+      "order": 100,
+      "mailcode": "5HospRd"
+    },
+    {
+      "type": "department",
+      "name": "Yukon Housing Corporation",
+      "order": 10,
+      "mailcode": "CM9",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM9"
+        },
+        {
+          "type": "division",
+          "name": "YHC President's Office",
+          "order": 20,
+          "mailcode": "Y1"
+        },
+        {
+          "type": "division",
+          "name": "Corporate Services ",
+          "order": 40,
+          "mailcode": "Y1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Finance Systems and Administration ",
+              "order": 40,
+              "mailcode": "Y1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Accounting Services",
+                  "order": 40,
+                  "mailcode": "Y1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Human Resources ",
+              "order": 40,
+              "mailcode": "Y1"
+            },
+            {
+              "type": "branch",
+              "name": "Policy and Communications ",
+              "order": 40,
+              "mailcode": "Y1"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Operations ",
+          "order": 100,
+          "mailcode": "Y1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Capital Development",
+              "order": 100,
+              "mailcode": "Y1"
+            },
+            {
+              "type": "branch",
+              "name": "Community Partnering and Lending",
+              "order": 100,
+              "mailcode": "Y1"
+            },
+            {
+              "type": "branch",
+              "name": "Housing Operations",
+              "order": 100,
+              "mailcode": "Y1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Carcross Housing Office",
+                  "order": 100,
+                  "mailcode": "Y1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Carmacks Housing Office",
+                  "order": 100,
+                  "mailcode": "Y1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Dawson City Housing Office",
+                  "order": 100,
+                  "mailcode": "Y1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Faro Housing Office",
+                  "order": 100,
+                  "mailcode": "Y1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Haines Junctions Housing Office",
+                  "order": 100,
+                  "mailcode": "Y1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Mayo Housing Office",
+                  "order": 100,
+                  "mailcode": "Y1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Ross River Housing Office",
+                  "order": 100,
+                  "mailcode": "Y1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Teslin Housing Office",
+                  "order": 100,
+                  "mailcode": "Y1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Watson Lake Housing Office",
+                  "order": 100,
+                  "mailcode": "Y1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Whitehorse Housing Office",
+                  "order": 100,
+                  "mailcode": "Y1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Yukon Liquor Corporation",
+      "order": 10,
+      "mailcode": "CM9",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM9"
+        },
+        {
+          "type": "division",
+          "name": "YLC President's Office",
+          "order": 20,
+          "mailcode": "X1"
+        },
+        {
+          "type": "division",
+          "name": "Accounting Services",
+          "order": 100,
+          "mailcode": "X1"
+        },
+        {
+          "type": "division",
+          "name": "Human Resources",
+          "order": 100,
+          "mailcode": "X1"
+        },
+        {
+          "type": "division",
+          "name": "Licensing and Inspections",
+          "order": 100,
+          "mailcode": "X1"
+        },
+        {
+          "type": "division",
+          "name": "Operations ",
+          "order": 100,
+          "mailcode": "X1",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Purchasing",
+              "order": 100,
+              "mailcode": "X1"
+            },
+            {
+              "type": "branch",
+              "name": "Rural Stores and Territorial Agent Services",
+              "order": 100,
+              "mailcode": "X1",
+              "children": [
+                {
+                  "type": "unit",
+                  "name": "Dawson City Liquor Store and Territorial Agent",
+                  "order": 100,
+                  "mailcode": "X1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Faro Liquor Store and Territorial Agent",
+                  "order": 100,
+                  "mailcode": "X1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Haines Junction Liquor Store and Territorial Agent",
+                  "order": 100,
+                  "mailcode": "X1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Mayo Liquor Store and Territorial Agent",
+                  "order": 100,
+                  "mailcode": "X1"
+                },
+                {
+                  "type": "unit",
+                  "name": "Watson Lake Liquor Store and Territorial Agent",
+                  "order": 100,
+                  "mailcode": "X1"
+                }
+              ]
+            },
+            {
+              "type": "branch",
+              "name": "Sales",
+              "order": 100,
+              "mailcode": "X1"
+            },
+            {
+              "type": "branch",
+              "name": "Warehouse Operations",
+              "order": 100,
+              "mailcode": "X1"
+            },
+            {
+              "type": "branch",
+              "name": "Whitehorse Liquor Store",
+              "order": 100,
+              "mailcode": "X1"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Social Responsibility, Policy and Planning",
+          "order": 100,
+          "mailcode": "X1"
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Yukon Lottery Commission",
+      "order": 100,
+      "mailcode": "CM9",
+      "children": [
+        {
+          "type": "division",
+          "name": "Lotteries Yukon",
+          "order": 100,
+          "mailcode": "CM9"
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Yukon Lottery Corporation",
+      "order": 10,
+      "mailcode": "CM9",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM9"
+        }
+      ]
+    },
+    {
+      "type": "department",
+      "name": "Yukon Workers Compensation Health and Safety Board",
+      "order": 10,
+      "mailcode": "CM8",
+      "children": [
+        {
+          "type": "division",
+          "name": "Minister's Office",
+          "order": 10,
+          "mailcode": "CM8"
+        },
+        {
+          "type": "division",
+          "name": "Corporate Services ",
+          "order": 40,
+          "mailcode": "WCHSB",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Policy Planning and Evaluation ",
+              "order": 40,
+              "mailcode": "WCHSB"
+            },
+            {
+              "type": "branch",
+              "name": "Social Marketing and Communications",
+              "order": 40,
+              "mailcode": "WCHSB"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Assessments",
+          "order": 100,
+          "mailcode": "WCHSB",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Centralized Services",
+              "order": 100,
+              "mailcode": "WCHSB"
+            },
+            {
+              "type": "branch",
+              "name": "Employer Services",
+              "order": 100,
+              "mailcode": "WCHSB"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Claims",
+          "order": 100,
+          "mailcode": "WCHSB",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Claimant Services",
+              "order": 100,
+              "mailcode": "WCHSB"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Executive",
+          "order": 100,
+          "mailcode": "WCHSB",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Board",
+              "order": 100,
+              "mailcode": "WCHSB"
+            },
+            {
+              "type": "branch",
+              "name": "Human Resources ",
+              "order": 100,
+              "mailcode": "WCHSB"
+            },
+            {
+              "type": "branch",
+              "name": "Legal Services",
+              "order": 100,
+              "mailcode": "WCHSB"
+            },
+            {
+              "type": "branch",
+              "name": "President",
+              "order": 100,
+              "mailcode": "WCHSB"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Occupational Health and Safety",
+          "order": 100,
+          "mailcode": "WCHSB",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Inspections and Compliance",
+              "order": 100,
+              "mailcode": "WCHSB"
+            },
+            {
+              "type": "branch",
+              "name": "Investigator",
+              "order": 100,
+              "mailcode": "WCHSB"
+            },
+            {
+              "type": "branch",
+              "name": "Mine Safety",
+              "order": 100,
+              "mailcode": "WCHSB"
+            },
+            {
+              "type": "branch",
+              "name": "Occupational Hygiene",
+              "order": 100,
+              "mailcode": "WCHSB"
+            },
+            {
+              "type": "branch",
+              "name": "OHS Executive",
+              "order": 100,
+              "mailcode": "WCHSB"
+            }
+          ]
+        },
+        {
+          "type": "division",
+          "name": "Operations ",
+          "order": 100,
+          "mailcode": "WCHSB",
+          "children": [
+            {
+              "type": "branch",
+              "name": "Financial Services ",
+              "order": 100,
+              "mailcode": "WCHSB"
+            },
+            {
+              "type": "branch",
+              "name": "Information Systems ",
+              "order": 100,
+              "mailcode": "WCHSB"
+            },
+            {
+              "type": "branch",
+              "name": "Records Management ",
+              "order": 100,
+              "mailcode": "WCHSB"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
