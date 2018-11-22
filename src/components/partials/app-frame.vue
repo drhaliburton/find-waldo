@@ -238,6 +238,7 @@
 .md-drawer.md-persistent-mini.md-left {
  border-left: 1px solid lightgrey !important;
 }
+
 .md-drawer.md-persistent-mini:not(.md-active) {
   width: 60px !important;
   .md-list-item-content {

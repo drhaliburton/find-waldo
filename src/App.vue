@@ -128,6 +128,10 @@ h1 {
     margin-right: -1px;
 }
 
+.md-drawer.md-persistent-mini:not(.md-active) .md-list-item-content {
+  padding: 0 !important;
+}
+
 .content-container {
   display: flex;
   flex-wrap: wrap;
