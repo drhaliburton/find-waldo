@@ -93,7 +93,7 @@ export default {
         {"ObjectId":"4","organization":"","department":"Highways and Public Works","division":"Transportation","branch":"Transportation Maintenance","unit":"Western Area","suite":"","office":"","address":"9024 Quartz Road","community":"Whitehorse","latitude":"60.73572103","longitude":"-135.0707895","mailcode":"W24"},
         {"ObjectId":"2847","organization":"","department":"Public Service Commission","division":"Branch reports direct to PSC Commissioner","branch":"Corporate Human Resources and Diversity Services","unit":"","suite":"","office":"Main Administration Building","address":"2071 2nd Avenue","community":"Whitehorse","latitude":"60.71678581","longitude":"-135.0500134","mailcode":"Z2"},
       ],
-      hasMap: false,
+      hasMap: true,
     }
   },
   computed: {
