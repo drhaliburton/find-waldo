@@ -2,6 +2,7 @@
 
 <template>
 <div class="content-container">
+  <br>
   <employee-card v-if="employee" :employee="employee[0]"></employee-card>
   <br>
   <address-card v-if="employee" :employee="employee[0]"></address-card>

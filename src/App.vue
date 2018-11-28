@@ -2,12 +2,12 @@
   <div id="app" v-if="departments">
     <app-frame :formatRoute="formatRoute">
       <breadcrumb :content="departments"></breadcrumb>
-      <md-field v-if="!this.$route.path.includes('employee/')">
+      <!-- <md-field v-if="!this.$route.path.includes('employee/')">
         <label>Search</label>
         <md-input v-model="searchQuery"></md-input>
         <div class="md-toolbar-section-end">
         </div>
-      </md-field>
+      </md-field> -->
       <router-view v-if="employees" :content="departments" :formatRoute="formatRoute"></router-view>
     </app-frame>
   </div>
@@ -92,6 +92,17 @@ export default {
   width: 100%;
 }
 
+.md-drawer-active {
+  .breadcrumb {
+    margin: 10px;
+  }
+  .content-container {
+    margin: 0 auto;
+  }
+}
+
+
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -107,6 +118,9 @@ body {
 .content-container {
   max-width: 1500px;
   justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 40px;
 }
 
 a {
@@ -130,11 +144,6 @@ h1 {
 
 .md-drawer.md-persistent-mini:not(.md-active) .md-list-item-content {
   padding: 0 !important;
-}
-
-.content-container {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .md-card {
@@ -163,6 +172,12 @@ h1 {
 
   .md-app-scroller {
     padding-left: 0 !important;
+  }
+  .breadcrumb {
+    margin-left: 10px !important;
+  }
+  .content-container {
+    margin-left: 0px;
   }
 }
 

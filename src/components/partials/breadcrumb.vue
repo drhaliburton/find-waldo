@@ -66,8 +66,8 @@ ul {
 }
 
 .breadcrumb {
-  float: left;
-  margin: 10px 0 15px;
+  text-align: left;
+  margin: 10px 70px 15px;
 
   span {
     font-size: 16px;

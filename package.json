@@ -1,5 +1,15 @@
 {
-  "name": "social",
+  "name": "findYG",
+  "author": [
+    {
+      "name": "Rebecca Haliburton",
+      "email": "haliburtonre@gmail.com"
+    },
+    {
+      "name": "Sarah Veness",
+      "email": "sarahveness@gmail.com"
+    }
+  ],
   "version": "0.1.0",
   "private": true,
   "scripts": {

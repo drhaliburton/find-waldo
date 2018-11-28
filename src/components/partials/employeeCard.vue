@@ -26,11 +26,11 @@
     </md-card-content>
 
     <md-card-actions md-alignment="left">
-      <md-button :href="emailPath">
+      <md-button :href="'mailto:' + employee.email">
         <md-icon>mail_outline</md-icon>
         {{employee.email}}
       </md-button>
-      <md-button :tel="employee.phone_office">
+      <md-button :href="'tel:' + employee.phone_office">
         <md-icon>phone</md-icon>
         {{employee.phone_office}}
       </md-button>
@@ -57,9 +57,6 @@ export default {
     }
   },
   computed: {
-    emailPath() {
-      return `mailto:${this.employee.email}`;
-    },
     mapsPath() {
       return `http://maps.google.com/?q=${this.employee.office} ${this.employee.address} ${this.employee.postal_code}`
     },
