@@ -120,7 +120,6 @@ body {
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 40px;
 }
 
 a {
